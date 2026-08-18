@@ -29,8 +29,19 @@ class PortfolioTests(unittest.TestCase):
         self.assertIn('<meta name="description"', rendered)
         self.assertIn('application/ld+json', rendered)
         self.assertIn('rel="canonical"', rendered)
+        self.assertIn('name="theme-color"', rendered)
         self.assertIn(build_site.SITE_URL, rendered)
         self.assertEqual(build_site.SITE_URL, "https://nesmachnydn.github.io/")
+
+    def test_rendered_page_has_curated_navigation_and_selected_work(self):
+        rendered = build_site.build_html(self.data)
+        self.assertIn('id="selected"', rendered)
+        self.assertIn('id="work"', rendered)
+        self.assertIn('id="focus"', rendered)
+        self.assertIn('class="metrics"', rendered)
+        self.assertIn('Skip to content', rendered)
+        for category in dict.fromkeys(project["category"] for project in self.data["projects"]):
+            self.assertIn(f'id="category-{build_site.slug(category)}"', rendered)
 
     def test_duplicate_project_order_is_rejected(self):
         mutated = json.loads(json.dumps(self.data))
