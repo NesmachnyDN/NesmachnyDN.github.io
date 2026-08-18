@@ -6,7 +6,8 @@
     "location": "Remote",
     "email": "d.nesmachniy80@gmail.com",
     "github": "https://github.com/NesmachnyDN",
-    "linkedin": "https://www.linkedin.com/in/dmitry-nesmachniy/"
+    "linkedin": "https://www.linkedin.com/in/dmitry-nesmachniy/",
+    "avatar": "https://avatars.githubusercontent.com/u/19331811?v=4"
   },
   "focus": [
     "Enterprise Architecture",
@@ -34,7 +35,9 @@
       "featured": true,
       "order": 10,
       "summary": "End-to-end enterprise architecture transformation case developed with TOGAF 10 concepts and ArchiMate, covering baseline/target architecture, capability planning, GAP analysis and migration roadmap.",
-      "tags": ["TOGAF", "ArchiMate", "Transformation", "Roadmap"]
+      "tags": ["TOGAF", "ArchiMate", "Transformation", "Roadmap"],
+      "preview": "https://raw.githubusercontent.com/NesmachnyDN/cloud-development-platform-architecture/main/assets/readme/06-target-architecture-application.jpg",
+      "preview_alt": "Target application architecture view from the Cloud Development Platform Architecture case"
     },
     {
       "title": "Portable Secure Exchange Client",

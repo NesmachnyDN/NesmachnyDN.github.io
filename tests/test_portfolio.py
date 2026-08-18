@@ -30,6 +30,7 @@ class PortfolioTests(unittest.TestCase):
         self.assertIn('application/ld+json', rendered)
         self.assertIn('rel="canonical"', rendered)
         self.assertIn('name="theme-color"', rendered)
+        self.assertIn('property="og:image"', rendered)
         self.assertIn(build_site.SITE_URL, rendered)
         self.assertEqual(build_site.SITE_URL, "https://nesmachnydn.github.io/")
 
@@ -42,6 +43,23 @@ class PortfolioTests(unittest.TestCase):
         self.assertIn('Skip to content', rendered)
         for category in dict.fromkeys(project["category"] for project in self.data["projects"]):
             self.assertIn(f'id="category-{build_site.slug(category)}"', rendered)
+
+    def test_portrait_and_architecture_preview_are_rendered(self):
+        rendered = build_site.build_html(self.data)
+        self.assertIn('class="portrait"', rendered)
+        self.assertIn(self.data["profile"]["avatar"], rendered)
+        previewed = [p for p in self.data["projects"] if p.get("preview")]
+        self.assertTrue(previewed)
+        for project in previewed:
+            self.assertIn(project["preview"], rendered)
+            self.assertIn(project["preview_alt"], rendered)
+
+    def test_preview_requires_alt_text(self):
+        mutated = json.loads(json.dumps(self.data))
+        previewed = next(p for p in mutated["projects"] if p.get("preview"))
+        previewed.pop("preview_alt")
+        with self.assertRaises(ValueError):
+            build_site.validate(mutated)
 
     def test_duplicate_project_order_is_rejected(self):
         mutated = json.loads(json.dumps(self.data))
