@@ -1,0 +1,85 @@
+{
+  "profile": {
+    "name": "Dmitry Nesmachny",
+    "headline": "Enterprise & Solution Architect",
+    "summary": "I design enterprise and solution architectures for complex corporate systems, with a focus on architecture transformation, integration, content and document platforms, secure exchange, architecture repositories, and engineering enablement.",
+    "location": "Remote",
+    "email": "d.nesmachniy80@gmail.com",
+    "github": "https://github.com/NesmachnyDN",
+    "linkedin": "https://www.linkedin.com/in/dmitry-nesmachniy/"
+  },
+  "focus": [
+    "Enterprise Architecture",
+    "Solution Architecture",
+    "Enterprise Integration",
+    "Architecture Governance",
+    "AI-Assisted Engineering",
+    "Architecture Tooling"
+  ],
+  "core": [
+    "TOGAF",
+    "ArchiMate",
+    "Capability-Based Planning",
+    "Integration Architecture",
+    "DDD",
+    "Java",
+    "Spring Boot",
+    "Architecture Automation"
+  ],
+  "projects": [
+    {
+      "title": "Cloud Development Platform Architecture",
+      "url": "https://github.com/NesmachnyDN/cloud-development-platform-architecture",
+      "category": "Enterprise Architecture",
+      "featured": true,
+      "order": 10,
+      "summary": "End-to-end enterprise architecture transformation case developed with TOGAF 10 concepts and ArchiMate, covering baseline/target architecture, capability planning, GAP analysis and migration roadmap.",
+      "tags": ["TOGAF", "ArchiMate", "Transformation", "Roadmap"]
+    },
+    {
+      "title": "Portable Secure Exchange Client",
+      "url": "https://github.com/NesmachnyDN/portable-secure-exchange-client",
+      "category": "Solution Architecture & Integration",
+      "featured": true,
+      "order": 20,
+      "summary": "Cross-platform local client for controlled file exchange, demonstrating integration boundaries, integrity verification, detached-signature abstraction, audit and embedded persistence.",
+      "tags": ["Integration", "Security", "Cross-platform", "Persistence"]
+    },
+    {
+      "title": "Offline Worklog Bridge",
+      "url": "https://github.com/NesmachnyDN/offline-worklog-bridge",
+      "category": "Solution Architecture & Integration",
+      "featured": true,
+      "order": 30,
+      "summary": "Offline-first integration bridge for systems available only from mutually exclusive network contexts, with canonical modeling, anti-corruption layers, reconciliation and idempotent publishing.",
+      "tags": ["Offline-first", "Integration", "ACL", "Reconciliation"]
+    },
+    {
+      "title": "AI-Assisted Engineering Template",
+      "url": "https://github.com/NesmachnyDN/ai-assisted-engineering-template",
+      "category": "Architecture & Engineering Tooling",
+      "featured": true,
+      "order": 40,
+      "summary": "Reusable architecture-governed workflow for software development with AI coding agents, explicit repository context, bounded PRs, versioned prompts and independent review gates.",
+      "tags": ["AI Engineering", "Governance", "Quality Gates", "Automation"]
+    },
+    {
+      "title": "SILA Union Development Toolkit",
+      "url": "https://github.com/NesmachnyDN/sila-union-development-toolkit",
+      "category": "Architecture & Engineering Tooling",
+      "featured": false,
+      "order": 50,
+      "summary": "Vendor-neutral Java toolkit illustrating architecture-repository automation, glossary import, synthetic repository stubs and architecture reporting.",
+      "tags": ["Java", "Architecture Repository", "Automation", "Tooling"]
+    },
+    {
+      "title": "Local Microservice Dev Stack",
+      "url": "https://github.com/NesmachnyDN/local-microservice-dev-stack",
+      "category": "Architecture & Engineering Tooling",
+      "featured": false,
+      "order": 60,
+      "summary": "Reproducible local infrastructure bootstrap for microservice development with PostgreSQL, Kafka and Apache Artemis while application services run and debug from the IDE.",
+      "tags": ["PostgreSQL", "Kafka", "Artemis", "Developer Experience"]
+    }
+  ]
+}
