@@ -30,6 +30,9 @@ jobs:
       - name: Build portfolio
         run: python scripts/build_site.py
 
+      - name: Add favicon
+        run: python scripts/add_favicon.py
+
       - name: Validate generated site
         run: python scripts/validate_site.py
 
