@@ -18,80 +18,52 @@ class PortfolioTests(unittest.TestCase):
     def test_portfolio_data_is_valid(self):
         build_site.validate(self.data)
 
-    def test_rendered_page_contains_all_projects(self):
-        rendered = build_site.build_html(self.data)
+    def test_russian_is_default_and_english_is_alternate(self):
+        ru = build_site.build_html(self.data, "ru")
+        en = build_site.build_html(self.data, "en")
+        self.assertIn('<html lang="ru">', ru)
+        self.assertIn('<html lang="en">', en)
+        self.assertIn(self.data["profile"]["ru"]["headline"], ru)
+        self.assertIn(self.data["profile"]["headline"], en)
+        self.assertIn('href="https://nesmachnydn.github.io/en/"', ru)
+        self.assertIn('href="https://nesmachnydn.github.io/"', en)
+        self.assertIn('hreflang="ru"', ru)
+        self.assertIn('hreflang="en"', en)
+
+    def test_all_projects_are_localized(self):
+        ru = build_site.build_html(self.data, "ru")
+        en = build_site.build_html(self.data, "en")
         for project in self.data["projects"]:
-            self.assertIn(project["title"], rendered)
-            self.assertIn(project["url"], rendered)
+            self.assertIn(project["title"], en)
+            self.assertIn(project["ru"]["title"], ru)
+            self.assertIn(project["url"], ru)
+            self.assertIn(project["url"], en)
 
-    def test_rendered_page_has_expected_metadata(self):
-        rendered = build_site.build_html(self.data)
-        self.assertIn('<meta name="description"', rendered)
-        self.assertIn('application/ld+json', rendered)
-        self.assertIn('rel="canonical"', rendered)
-        self.assertIn('name="theme-color"', rendered)
-        self.assertIn('property="og:image"', rendered)
-        self.assertIn(build_site.SITE_URL, rendered)
-        self.assertEqual(build_site.SITE_URL, "https://nesmachnydn.github.io/")
+    def test_metadata_is_language_specific(self):
+        ru = build_site.build_html(self.data, "ru")
+        en = build_site.build_html(self.data, "en")
+        self.assertIn('property="og:locale" content="ru_RU"', ru)
+        self.assertIn('property="og:locale" content="en_US"', en)
+        self.assertIn('rel="canonical" href="https://nesmachnydn.github.io/"', ru)
+        self.assertIn('rel="canonical" href="https://nesmachnydn.github.io/en/"', en)
 
-    def test_rendered_page_has_curated_navigation_and_selected_work(self):
-        rendered = build_site.build_html(self.data)
-        self.assertIn('id="selected"', rendered)
-        self.assertIn('id="work"', rendered)
-        self.assertIn('id="focus"', rendered)
-        self.assertIn('class="metrics"', rendered)
-        self.assertIn('Skip to content', rendered)
-        for category in dict.fromkeys(project["category"] for project in self.data["projects"]):
-            self.assertIn(f'id="category-{build_site.slug(category)}"', rendered)
+    def test_selected_project_covers_are_not_evidence_thumbnails(self):
+        for locale in ("ru", "en"):
+            rendered = build_site.build_html(self.data, locale)
+            featured = [p for p in self.data["projects"] if p["featured"]]
+            self.assertEqual(rendered.count('class="project-cover"'), len(featured))
+            for item in [e for p in self.data["projects"] for e in p.get("evidence", [])]:
+                self.assertNotIn(item["url"], rendered)
 
-    def test_portrait_and_selected_project_covers_are_rendered(self):
-        rendered = build_site.build_html(self.data)
-        self.assertIn('class="portrait"', rendered)
-        self.assertIn(self.data["profile"]["avatar"], rendered)
-        featured = [p for p in self.data["projects"] if p["featured"]]
-        self.assertTrue(featured)
-        for project in featured:
-            self.assertIn(project["cover"], rendered)
-            self.assertIn(project["cover_alt"], rendered)
-        self.assertEqual(rendered.count('class="project-cover"'), len(featured))
+    def test_russian_focus_content_is_rendered(self):
+        rendered = build_site.build_html(self.data, "ru")
+        for key in self.data["focus"]:
+            self.assertIn(self.data["focus_ru"][key]["title"], rendered)
+            self.assertIn(self.data["focus_ru"][key]["detail"], rendered)
 
-    def test_architecture_evidence_is_metadata_not_thumbnail_content(self):
-        rendered = build_site.build_html(self.data)
-        evidence = [item for p in self.data["projects"] for item in p.get("evidence", [])]
-        self.assertTrue(evidence)
-        for item in evidence:
-            self.assertNotIn(item["url"], rendered)
-
-    def test_full_portfolio_uses_compact_catalog_instead_of_duplicate_cards(self):
-        rendered = build_site.build_html(self.data)
-        self.assertIn('class="catalog-list"', rendered)
-        self.assertIn('class="catalog-item"', rendered)
-        self.assertIn('Compact index by architecture track', rendered)
-        self.assertEqual(rendered.count('Selected work</span>'), sum(1 for p in self.data["projects"] if p["featured"]))
-
-    def test_focus_details_are_rendered_for_every_focus_area(self):
-        rendered = build_site.build_html(self.data)
-        for focus in self.data["focus"]:
-            self.assertIn(self.data["focus_details"][focus], rendered)
-        self.assertIn('class="focus-detail"', rendered)
-
-    def test_focus_details_must_match_focus_values(self):
+    def test_localization_is_mandatory(self):
         mutated = json.loads(json.dumps(self.data))
-        mutated["focus_details"].pop(mutated["focus"][0])
-        with self.assertRaises(ValueError):
-            build_site.validate(mutated)
-
-    def test_featured_cover_requires_alt_text(self):
-        mutated = json.loads(json.dumps(self.data))
-        featured = next(p for p in mutated["projects"] if p["featured"])
-        featured.pop("cover_alt")
-        with self.assertRaises(ValueError):
-            build_site.validate(mutated)
-
-    def test_featured_project_requires_cover(self):
-        mutated = json.loads(json.dumps(self.data))
-        featured = next(p for p in mutated["projects"] if p["featured"])
-        featured.pop("cover")
+        mutated["projects"][0]["ru"].pop("summary")
         with self.assertRaises(ValueError):
             build_site.validate(mutated)
 

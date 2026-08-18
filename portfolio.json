@@ -7,7 +7,12 @@
     "email": "d.nesmachniy80@gmail.com",
     "github": "https://github.com/NesmachnyDN",
     "linkedin": "https://www.linkedin.com/in/dmitry-nesmachniy/",
-    "avatar": "https://avatars.githubusercontent.com/u/19331811?v=4"
+    "avatar": "https://avatars.githubusercontent.com/u/19331811?v=4",
+    "ru": {
+      "name": "Дмитрий Несмачный",
+      "headline": "Корпоративный архитектор / Архитектор решений",
+      "summary": "Проектирую корпоративную архитектуру и архитектуру решений для сложных корпоративных систем. Основной фокус — архитектурная трансформация, интеграция, платформы контента и электронных документов, защищённый обмен, архитектурные репозитории и инженерные практики."
+    }
   },
   "focus": [
     "Enterprise Architecture",
@@ -25,16 +30,16 @@
     "AI-Assisted Engineering": "Repository-governed context, bounded PRs, validation evidence and independent review.",
     "Architecture Tooling": "Automation that makes architecture repositories, standards and engineering workflows repeatable."
   },
-  "core": [
-    "TOGAF",
-    "ArchiMate",
-    "Capability-Based Planning",
-    "Integration Architecture",
-    "DDD",
-    "Java",
-    "Spring Boot",
-    "Architecture Automation"
-  ],
+  "focus_ru": {
+    "Enterprise Architecture": {"title": "Корпоративная архитектура", "detail": "Бизнес-возможности, текущее и целевое состояние, дорожные карты трансформации и трассировка до бизнес-драйверов."},
+    "Solution Architecture": {"title": "Архитектура решений", "detail": "Границы сервисов, атрибуты качества, ограничения развёртывания и решения, готовые к передаче в реализацию."},
+    "Enterprise Integration": {"title": "Корпоративная интеграция", "detail": "API, очереди и события, асинхронные взаимодействия, anti-corruption layer и явно определённая семантика отказов."},
+    "Architecture Governance": {"title": "Архитектурное управление", "detail": "ADR, стандарты, архитектурные проверки и сквозная трассировка решений до реализации."},
+    "AI-Assisted Engineering": {"title": "Разработка с применением ИИ", "detail": "Управляемый контекст репозитория, bounded PR, доказательства проверок и независимый review результатов ИИ-агентов."},
+    "Architecture Tooling": {"title": "Архитектурные инструменты", "detail": "Автоматизация архитектурных репозиториев, стандартов и инженерных процессов для воспроизводимой работы команд."}
+  },
+  "core": ["TOGAF", "ArchiMate", "Capability-Based Planning", "Integration Architecture", "DDD", "Java", "Spring Boot", "Architecture Automation"],
+  "core_ru": ["TOGAF", "ArchiMate", "Планирование на основе бизнес-возможностей", "Интеграционная архитектура", "DDD", "Java", "Spring Boot", "Автоматизация архитектуры"],
   "projects": [
     {
       "title": "Cloud Development Platform Architecture",
@@ -47,13 +52,14 @@
       "tags": ["TOGAF", "ArchiMate", "Transformation", "Roadmap"],
       "cover": "./assets/covers/cloud-development-platform-architecture.svg",
       "cover_alt": "Cloud Development Platform Architecture portfolio cover",
-      "evidence": [
-        {
-          "type": "architecture-diagram",
-          "url": "https://raw.githubusercontent.com/NesmachnyDN/cloud-development-platform-architecture/main/assets/readme/06-target-architecture-application.jpg",
-          "alt": "Target application architecture view from the Cloud Development Platform Architecture case"
-        }
-      ]
+      "ru": {
+        "title": "Архитектура облачной платформы разработки",
+        "category": "Корпоративная архитектура",
+        "summary": "Сквозной кейс архитектурной трансформации с применением TOGAF 10 и ArchiMate: текущее и целевое состояние, бизнес-возможности, GAP-анализ и дорожная карта миграции.",
+        "tags": ["TOGAF", "ArchiMate", "Трансформация", "Roadmap"],
+        "cover_alt": "Обложка кейса архитектуры облачной платформы разработки"
+      },
+      "evidence": [{"type": "architecture-diagram", "url": "https://raw.githubusercontent.com/NesmachnyDN/cloud-development-platform-architecture/main/assets/readme/06-target-architecture-application.jpg", "alt": "Target application architecture view from the Cloud Development Platform Architecture case"}]
     },
     {
       "title": "Portable Secure Exchange Client",
@@ -64,7 +70,14 @@
       "summary": "Cross-platform local client for controlled file exchange, demonstrating integration boundaries, integrity verification, detached-signature abstraction, audit and embedded persistence.",
       "tags": ["Integration", "Security", "Cross-platform", "Persistence"],
       "cover": "./assets/covers/portable-secure-exchange-client.svg",
-      "cover_alt": "Portable Secure Exchange Client portfolio cover"
+      "cover_alt": "Portable Secure Exchange Client portfolio cover",
+      "ru": {
+        "title": "Защищённый клиент обмена файлами",
+        "category": "Архитектура решений и интеграция",
+        "summary": "Кроссплатформенный локальный клиент для контролируемого обмена файлами: интеграционные границы, проверка целостности, абстракция отсоединённой подписи, аудит и встроенное хранение.",
+        "tags": ["Интеграция", "Безопасность", "Кроссплатформенность", "Хранение"],
+        "cover_alt": "Обложка кейса защищённого клиента обмена файлами"
+      }
     },
     {
       "title": "Offline Worklog Bridge",
@@ -75,7 +88,14 @@
       "summary": "Offline-first integration bridge for systems available only from mutually exclusive network contexts, with canonical modeling, anti-corruption layers, reconciliation and idempotent publishing.",
       "tags": ["Offline-first", "Integration", "ACL", "Reconciliation"],
       "cover": "./assets/covers/offline-worklog-bridge.svg",
-      "cover_alt": "Offline Worklog Bridge portfolio cover"
+      "cover_alt": "Offline Worklog Bridge portfolio cover",
+      "ru": {
+        "title": "Offline-интеграционный мост",
+        "category": "Архитектура решений и интеграция",
+        "summary": "Offline-first интеграционный мост для систем, доступных из взаимоисключающих сетевых контуров: каноническая модель, anti-corruption layer, сверка и идемпотентная публикация.",
+        "tags": ["Offline-first", "Интеграция", "ACL", "Сверка"],
+        "cover_alt": "Обложка кейса offline-интеграционного моста"
+      }
     },
     {
       "title": "AI-Assisted Engineering Template",
@@ -86,7 +106,14 @@
       "summary": "Reusable architecture-governed workflow for software development with AI coding agents, explicit repository context, bounded PRs, versioned prompts and independent review gates.",
       "tags": ["AI Engineering", "Governance", "Quality Gates", "Automation"],
       "cover": "./assets/covers/ai-assisted-engineering-template.svg",
-      "cover_alt": "AI-Assisted Engineering Template portfolio cover"
+      "cover_alt": "AI-Assisted Engineering Template portfolio cover",
+      "ru": {
+        "title": "Шаблон разработки с ИИ-агентами",
+        "category": "Архитектурные и инженерные инструменты",
+        "summary": "Переиспользуемый архитектурно управляемый процесс разработки с ИИ-агентами: явный контекст репозитория, bounded PR, версионируемые промпты и независимые quality gates.",
+        "tags": ["ИИ-разработка", "Governance", "Quality Gates", "Автоматизация"],
+        "cover_alt": "Обложка шаблона разработки с ИИ-агентами"
+      }
     },
     {
       "title": "SILA Union Development Toolkit",
@@ -95,7 +122,13 @@
       "featured": false,
       "order": 50,
       "summary": "Vendor-neutral Java toolkit illustrating architecture-repository automation, glossary import, synthetic repository stubs and architecture reporting.",
-      "tags": ["Java", "Architecture Repository", "Automation", "Tooling"]
+      "tags": ["Java", "Architecture Repository", "Automation", "Tooling"],
+      "ru": {
+        "title": "Инструментарий автоматизации архитектурного репозитория",
+        "category": "Архитектурные и инженерные инструменты",
+        "summary": "Вендор-независимый Java toolkit для автоматизации архитектурного репозитория: импорт глоссария, синтетические заглушки репозитория и формирование архитектурной отчётности.",
+        "tags": ["Java", "Архитектурный репозиторий", "Автоматизация", "Tooling"]
+      }
     },
     {
       "title": "Local Microservice Dev Stack",
@@ -104,7 +137,13 @@
       "featured": false,
       "order": 60,
       "summary": "Reproducible local infrastructure bootstrap for microservice development with PostgreSQL, Kafka and Apache Artemis while application services run and debug from the IDE.",
-      "tags": ["PostgreSQL", "Kafka", "Artemis", "Developer Experience"]
+      "tags": ["PostgreSQL", "Kafka", "Artemis", "Developer Experience"],
+      "ru": {
+        "title": "Локальный стек для микросервисной разработки",
+        "category": "Архитектурные и инженерные инструменты",
+        "summary": "Воспроизводимый локальный инфраструктурный контур для микросервисной разработки с PostgreSQL, Kafka и Apache Artemis при запуске и отладке прикладных сервисов из IDE.",
+        "tags": ["PostgreSQL", "Kafka", "Artemis", "Developer Experience"]
+      }
     }
   ]
 }
