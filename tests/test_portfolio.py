@@ -54,6 +54,25 @@ class PortfolioTests(unittest.TestCase):
             self.assertIn(project["preview"], rendered)
             self.assertIn(project["preview_alt"], rendered)
 
+    def test_full_portfolio_uses_compact_catalog_instead_of_duplicate_cards(self):
+        rendered = build_site.build_html(self.data)
+        self.assertIn('class="catalog-list"', rendered)
+        self.assertIn('class="catalog-item"', rendered)
+        self.assertIn('Compact index by architecture track', rendered)
+        self.assertEqual(rendered.count('Selected work</span>'), sum(1 for p in self.data["projects"] if p["featured"]))
+
+    def test_focus_details_are_rendered_for_every_focus_area(self):
+        rendered = build_site.build_html(self.data)
+        for focus in self.data["focus"]:
+            self.assertIn(self.data["focus_details"][focus], rendered)
+        self.assertIn('class="focus-detail"', rendered)
+
+    def test_focus_details_must_match_focus_values(self):
+        mutated = json.loads(json.dumps(self.data))
+        mutated["focus_details"].pop(mutated["focus"][0])
+        with self.assertRaises(ValueError):
+            build_site.validate(mutated)
+
     def test_preview_requires_alt_text(self):
         mutated = json.loads(json.dumps(self.data))
         previewed = next(p for p in mutated["projects"] if p.get("preview"))
