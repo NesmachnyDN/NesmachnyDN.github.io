@@ -27,6 +27,8 @@ class LinkCollector(HTMLParser):
             self.links.append(("href", values["href"] or ""))
         if tag == "link" and values.get("href"):
             self.links.append(("href", values["href"] or ""))
+        if tag == "img" and values.get("src"):
+            self.links.append(("src", values["src"] or ""))
         if tag == "meta" and values.get("name") == "description" and values.get("content"):
             self.description_seen = True
         if tag == "title":
@@ -34,7 +36,7 @@ class LinkCollector(HTMLParser):
 
 
 def main() -> None:
-    required = ["index.html", "style.css", ".nojekyll", "robots.txt", "sitemap.xml"]
+    required = ["index.html", "style.css", "evidence.css", ".nojekyll", "robots.txt", "sitemap.xml"]
     missing = [name for name in required if not (SITE / name).exists()]
     if missing:
         raise SystemExit(f"Missing generated files: {missing}")
@@ -72,7 +74,7 @@ def main() -> None:
     if found:
         raise SystemExit(f"Generated site contains forbidden/internal URL markers: {found}")
 
-    print(f"Validated {len(parser.links)} links and {len(parser.ids)} anchors")
+    print(f"Validated {len(parser.links)} links/assets and {len(parser.ids)} anchors")
 
 
 if __name__ == "__main__":
