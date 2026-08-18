@@ -41,11 +41,19 @@
       "url": "https://github.com/NesmachnyDN/cloud-development-platform-architecture",
       "category": "Enterprise Architecture",
       "featured": true,
+      "lead": true,
       "order": 10,
       "summary": "End-to-end enterprise architecture transformation case developed with TOGAF 10 concepts and ArchiMate, covering baseline/target architecture, capability planning, GAP analysis and migration roadmap.",
       "tags": ["TOGAF", "ArchiMate", "Transformation", "Roadmap"],
-      "preview": "https://raw.githubusercontent.com/NesmachnyDN/cloud-development-platform-architecture/main/assets/readme/06-target-architecture-application.jpg",
-      "preview_alt": "Target application architecture view from the Cloud Development Platform Architecture case"
+      "cover": "./assets/covers/cloud-development-platform-architecture.svg",
+      "cover_alt": "Cloud Development Platform Architecture portfolio cover",
+      "evidence": [
+        {
+          "type": "architecture-diagram",
+          "url": "https://raw.githubusercontent.com/NesmachnyDN/cloud-development-platform-architecture/main/assets/readme/06-target-architecture-application.jpg",
+          "alt": "Target application architecture view from the Cloud Development Platform Architecture case"
+        }
+      ]
     },
     {
       "title": "Portable Secure Exchange Client",
@@ -54,7 +62,9 @@
       "featured": true,
       "order": 20,
       "summary": "Cross-platform local client for controlled file exchange, demonstrating integration boundaries, integrity verification, detached-signature abstraction, audit and embedded persistence.",
-      "tags": ["Integration", "Security", "Cross-platform", "Persistence"]
+      "tags": ["Integration", "Security", "Cross-platform", "Persistence"],
+      "cover": "./assets/covers/portable-secure-exchange-client.svg",
+      "cover_alt": "Portable Secure Exchange Client portfolio cover"
     },
     {
       "title": "Offline Worklog Bridge",
@@ -63,7 +73,9 @@
       "featured": true,
       "order": 30,
       "summary": "Offline-first integration bridge for systems available only from mutually exclusive network contexts, with canonical modeling, anti-corruption layers, reconciliation and idempotent publishing.",
-      "tags": ["Offline-first", "Integration", "ACL", "Reconciliation"]
+      "tags": ["Offline-first", "Integration", "ACL", "Reconciliation"],
+      "cover": "./assets/covers/offline-worklog-bridge.svg",
+      "cover_alt": "Offline Worklog Bridge portfolio cover"
     },
     {
       "title": "AI-Assisted Engineering Template",
@@ -72,7 +84,9 @@
       "featured": true,
       "order": 40,
       "summary": "Reusable architecture-governed workflow for software development with AI coding agents, explicit repository context, bounded PRs, versioned prompts and independent review gates.",
-      "tags": ["AI Engineering", "Governance", "Quality Gates", "Automation"]
+      "tags": ["AI Engineering", "Governance", "Quality Gates", "Automation"],
+      "cover": "./assets/covers/ai-assisted-engineering-template.svg",
+      "cover_alt": "AI-Assisted Engineering Template portfolio cover"
     },
     {
       "title": "SILA Union Development Toolkit",

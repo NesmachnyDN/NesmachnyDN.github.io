@@ -44,15 +44,23 @@ class PortfolioTests(unittest.TestCase):
         for category in dict.fromkeys(project["category"] for project in self.data["projects"]):
             self.assertIn(f'id="category-{build_site.slug(category)}"', rendered)
 
-    def test_portrait_and_architecture_preview_are_rendered(self):
+    def test_portrait_and_selected_project_covers_are_rendered(self):
         rendered = build_site.build_html(self.data)
         self.assertIn('class="portrait"', rendered)
         self.assertIn(self.data["profile"]["avatar"], rendered)
-        previewed = [p for p in self.data["projects"] if p.get("preview")]
-        self.assertTrue(previewed)
-        for project in previewed:
-            self.assertIn(project["preview"], rendered)
-            self.assertIn(project["preview_alt"], rendered)
+        featured = [p for p in self.data["projects"] if p["featured"]]
+        self.assertTrue(featured)
+        for project in featured:
+            self.assertIn(project["cover"], rendered)
+            self.assertIn(project["cover_alt"], rendered)
+        self.assertEqual(rendered.count('class="project-cover"'), len(featured))
+
+    def test_architecture_evidence_is_metadata_not_thumbnail_content(self):
+        rendered = build_site.build_html(self.data)
+        evidence = [item for p in self.data["projects"] for item in p.get("evidence", [])]
+        self.assertTrue(evidence)
+        for item in evidence:
+            self.assertNotIn(item["url"], rendered)
 
     def test_full_portfolio_uses_compact_catalog_instead_of_duplicate_cards(self):
         rendered = build_site.build_html(self.data)
@@ -73,10 +81,24 @@ class PortfolioTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             build_site.validate(mutated)
 
-    def test_preview_requires_alt_text(self):
+    def test_featured_cover_requires_alt_text(self):
         mutated = json.loads(json.dumps(self.data))
-        previewed = next(p for p in mutated["projects"] if p.get("preview"))
-        previewed.pop("preview_alt")
+        featured = next(p for p in mutated["projects"] if p["featured"])
+        featured.pop("cover_alt")
+        with self.assertRaises(ValueError):
+            build_site.validate(mutated)
+
+    def test_featured_project_requires_cover(self):
+        mutated = json.loads(json.dumps(self.data))
+        featured = next(p for p in mutated["projects"] if p["featured"])
+        featured.pop("cover")
+        with self.assertRaises(ValueError):
+            build_site.validate(mutated)
+
+    def test_only_one_lead_project_is_allowed(self):
+        mutated = json.loads(json.dumps(self.data))
+        featured = [p for p in mutated["projects"] if p["featured"]]
+        featured[1]["lead"] = True
         with self.assertRaises(ValueError):
             build_site.validate(mutated)
 
