@@ -62,6 +62,25 @@
       "evidence": [{"type": "architecture-diagram", "url": "https://raw.githubusercontent.com/NesmachnyDN/cloud-development-platform-architecture/main/assets/readme/06-target-architecture-application.jpg", "alt": "Target application architecture view from the Cloud Development Platform Architecture case"}]
     },
     {
+      "title": "IT Solution Selection Framework",
+      "url": "https://github.com/NesmachnyDN/it-solution-selection-framework",
+      "category": "Enterprise & Solution Architecture",
+      "featured": true,
+      "order": 15,
+      "summary": "Vendor-neutral architecture trade-study framework for selecting enterprise IT solutions through mandatory gates, evidence-backed weighted criteria, TCO, risk analysis and sensitivity checks.",
+      "tags": ["Decision Analysis", "Trade Study", "TCO", "Architecture Governance"],
+      "cover": "./assets/covers/it-solution-selection-framework.svg",
+      "cover_alt": "IT Solution Selection Framework portfolio cover",
+      "ru": {
+        "title": "Методика выбора ИТ-решения",
+        "category": "Корпоративная архитектура и архитектура решений",
+        "summary": "Вендор-независимый архитектурный trade study: отсекающие требования, оценка shortlist по подтверждённым критериям, TCO, риски и анализ чувствительности.",
+        "tags": ["Выбор решений", "Trade Study", "TCO", "Architecture Governance"],
+        "cover_alt": "Обложка кейса выбора ИТ-решения"
+      },
+      "evidence": [{"type": "decision-analysis", "url": "https://raw.githubusercontent.com/NesmachnyDN/it-solution-selection-framework/main/assets/screenshots/01-decision-summary.png", "alt": "Decision summary from the synthetic IT solution selection case"}]
+    },
+    {
       "title": "Portable Secure Exchange Client",
       "url": "https://github.com/NesmachnyDN/portable-secure-exchange-client",
       "category": "Solution Architecture & Integration",
