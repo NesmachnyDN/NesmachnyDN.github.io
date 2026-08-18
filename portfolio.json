@@ -17,6 +17,14 @@
     "AI-Assisted Engineering",
     "Architecture Tooling"
   ],
+  "focus_details": {
+    "Enterprise Architecture": "Capabilities, baseline and target states, transformation roadmaps and traceability to business drivers.",
+    "Solution Architecture": "Service boundaries, quality attributes, deployment constraints and implementation-ready decisions.",
+    "Enterprise Integration": "APIs, messaging, asynchronous flows, anti-corruption layers and explicit failure semantics.",
+    "Architecture Governance": "ADRs, standards, review gates and architecture-to-delivery traceability.",
+    "AI-Assisted Engineering": "Repository-governed context, bounded PRs, validation evidence and independent review.",
+    "Architecture Tooling": "Automation that makes architecture repositories, standards and engineering workflows repeatable."
+  },
   "core": [
     "TOGAF",
     "ArchiMate",
