@@ -61,6 +61,16 @@ class PortfolioTests(unittest.TestCase):
             self.assertIn(self.data["focus_ru"][key]["title"], rendered)
             self.assertIn(self.data["focus_ru"][key]["detail"], rendered)
 
+    def test_homepage_is_content_first_not_site_explanation(self):
+        ru = build_site.build_html(self.data, "ru")
+        self.assertIn("Избранные архитектурные кейсы", ru)
+        self.assertIn("Все публичные проекты", ru)
+        self.assertIn("Профессиональный фокус", ru)
+        self.assertNotIn("этот раздел предназначен", ru)
+        self.assertNotIn("не уменьшаются до нечитаемых превью", ru)
+        self.assertNotIn("Портфолио автоматически формируется", ru)
+        self.assertNotIn("Архитектура как инженерная дисциплина", ru)
+
     def test_localization_is_mandatory(self):
         mutated = json.loads(json.dumps(self.data))
         mutated["projects"][0]["ru"].pop("summary")
