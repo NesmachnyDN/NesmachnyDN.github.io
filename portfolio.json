@@ -62,6 +62,24 @@
       "evidence": [{"type": "architecture-diagram", "url": "https://raw.githubusercontent.com/NesmachnyDN/cloud-development-platform-architecture/main/assets/readme/06-target-architecture-application.jpg", "alt": "Target application architecture view from the Cloud Development Platform Architecture case"}]
     },
     {
+      "title": "Federated Platform Architecture Review",
+      "url": "https://github.com/NesmachnyDN/federated-platform-architecture-review",
+      "category": "Enterprise & Solution Architecture",
+      "featured": true,
+      "order": 12,
+      "summary": "Architecture review case showing how a federated enterprise platform was strengthened by separating control and execution planes, defining node profiles, lifecycle/version governance, bounded autonomy, reconciliation and operational responsibility.",
+      "tags": ["Architecture Review", "Distributed Systems", "Control Plane", "Architecture Governance"],
+      "cover": "./assets/covers/federated-platform-architecture-review.svg",
+      "cover_alt": "Federated Platform Architecture Review portfolio cover",
+      "ru": {
+        "title": "Архитектурное ревью распределённой платформы",
+        "category": "Корпоративная архитектура и архитектура решений",
+        "summary": "Кейс архитектурного ревью: выделение контура управления из прикладной конфигурации, типовые профили узлов, управление жизненным циклом и версиями, автономность, синхронизация и эксплуатационная ответственность.",
+        "tags": ["Архитектурное ревью", "Распределённые системы", "Контур управления", "Architecture Governance"],
+        "cover_alt": "Обложка кейса архитектурного ревью распределённой платформы"
+      }
+    },
+    {
       "title": "IT Solution Selection Framework",
       "url": "https://github.com/NesmachnyDN/it-solution-selection-framework",
       "category": "Enterprise & Solution Architecture",
