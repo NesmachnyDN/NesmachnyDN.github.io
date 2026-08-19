@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
   <title id="title">Federated Platform Architecture Review</title>
   <desc id="desc">Architecture review portfolio cover showing control plane and distributed nodes</desc>
   <defs>
@@ -7,7 +7,7 @@
       <stop offset="1" stop-color="#0b4e91"/>
     </linearGradient>
   </defs>
-  <rect width="1280" height="720" rx="34" fill="url(#bg)"/>
+  <rect width="1280" height="640" rx="34" fill="url(#bg)"/>
   <g fill="none" stroke="#8ec5ff" stroke-width="3" opacity=".28">
     <rect x="790" y="118" width="350" height="92" rx="22"/>
     <rect x="748" y="348" width="145" height="92" rx="22"/>
@@ -34,10 +34,10 @@
     <text x="1132" y="401" fill="#071a3a">ISOLATED</text>
   </g>
   <g font-family="Arial,Helvetica,sans-serif" font-size="25" fill="#d5ebff">
-    <text x="72" y="615">Architecture review</text>
-    <text x="318" y="615">Node profiles</text>
-    <text x="515" y="615">Version governance</text>
-    <text x="785" y="615">Reconciliation</text>
-    <text x="1000" y="615">Failure containment</text>
+    <text x="72" y="565">Architecture review</text>
+    <text x="318" y="565">Node profiles</text>
+    <text x="515" y="565">Version governance</text>
+    <text x="785" y="565">Reconciliation</text>
+    <text x="1000" y="565">Failure containment</text>
   </g>
 </svg>
