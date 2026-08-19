@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Enterprise Integration Modernization</title>
+  <desc id="desc">Portfolio cover for an enterprise integration migration architecture case</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071a3a"/>
+      <stop offset="1" stop-color="#0b4e91"/>
+    </linearGradient>
+    <linearGradient id="target" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8ec5ff"/>
+      <stop offset="1" stop-color="#d9f1ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" rx="34" fill="url(#bg)"/>
+  <g font-family="Arial,Helvetica,sans-serif" fill="#fff">
+    <text x="72" y="108" font-size="27" font-weight="700" letter-spacing="2.5">ENTERPRISE · INTEGRATION ARCHITECTURE</text>
+    <text x="72" y="210" font-size="60" font-weight="700">Enterprise Integration</text>
+    <text x="72" y="282" font-size="60" font-weight="700">Modernization</text>
+    <text x="72" y="352" font-size="28" opacity=".9">Legacy → Transition → Target</text>
+  </g>
+  <g transform="translate(730 102)" font-family="Arial,Helvetica,sans-serif">
+    <g fill="none" stroke="#8ec5ff" stroke-width="3" opacity=".32">
+      <rect x="0" y="52" width="150" height="72" rx="18"/>
+      <rect x="0" y="188" width="150" height="72" rx="18"/>
+      <rect x="205" y="120" width="124" height="72" rx="18"/>
+      <rect x="385" y="52" width="150" height="72" rx="18"/>
+      <rect x="385" y="188" width="150" height="72" rx="18"/>
+      <path d="M150 88h55M150 224h55M329 156h56M460 124v64"/>
+    </g>
+    <rect x="205" y="120" width="124" height="72" rx="18" fill="#0c2f5f" stroke="#9bd6ff" stroke-width="3"/>
+    <text x="230" y="151" font-size="16" font-weight="700" fill="#d9f1ff">BRIDGE</text>
+    <text x="223" y="174" font-size="13" fill="#a9d8ff">coexistence</text>
+    <rect x="385" y="52" width="150" height="72" rx="18" fill="url(#target)"/>
+    <rect x="385" y="188" width="150" height="72" rx="18" fill="url(#target)"/>
+    <text x="414" y="84" font-size="17" font-weight="700" fill="#071a3a">TARGET</text>
+    <text x="408" y="108" font-size="14" fill="#12375f">platform</text>
+    <text x="409" y="220" font-size="17" font-weight="700" fill="#071a3a">MIGRATED</text>
+    <text x="416" y="244" font-size="14" fill="#12375f">endpoint</text>
+    <text x="23" y="82" font-size="16" font-weight="700" fill="#d5ebff">LEGACY</text>
+    <text x="19" y="106" font-size="13" fill="#9ecdf5">transport</text>
+    <text x="23" y="218" font-size="16" font-weight="700" fill="#d5ebff">LEGACY</text>
+    <text x="20" y="242" font-size="13" fill="#9ecdf5">endpoint</text>
+  </g>
+  <g font-family="Arial,Helvetica,sans-serif" font-size="23" fill="#d5ebff">
+    <text x="72" y="615">Transition architecture</text>
+    <text x="336" y="615">Migration archetypes</text>
+    <text x="607" y="615">Wave planning</text>
+    <text x="807" y="615">Cutover &amp; rollback</text>
+    <text x="1058" y="615">Governance</text>
+  </g>
+</svg>
