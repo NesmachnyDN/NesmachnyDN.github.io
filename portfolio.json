@@ -80,6 +80,25 @@
       }
     },
     {
+      "title": "Enterprise Integration Modernization",
+      "url": "https://github.com/NesmachnyDN/enterprise-integration-migration-case",
+      "category": "Enterprise & Solution Architecture",
+      "featured": true,
+      "order": 14,
+      "summary": "Enterprise integration modernization case covering legacy discovery, transition architecture, controlled coexistence, migration archetypes, readiness gates, wave planning and production rollback governance.",
+      "tags": ["Legacy Modernization", "Integration Architecture", "Transition Architecture", "Migration Governance"],
+      "cover": "./assets/covers/enterprise-integration-migration-case.svg",
+      "cover_alt": "Enterprise Integration Modernization portfolio cover",
+      "ru": {
+        "title": "Модернизация корпоративной интеграции",
+        "category": "Корпоративная архитектура и архитектура решений",
+        "summary": "Кейс миграции унаследованного интеграционного ландшафта: AS-IS, переходная и целевая архитектура, controlled coexistence, типизация сценариев, критерии готовности, волны миграции и управляемый rollback.",
+        "tags": ["Legacy Modernization", "Интеграционная архитектура", "Переходная архитектура", "Migration Governance"],
+        "cover_alt": "Обложка кейса модернизации корпоративной интеграции"
+      },
+      "evidence": [{"type": "architecture-diagram", "url": "https://raw.githubusercontent.com/NesmachnyDN/enterprise-integration-migration-case/main/assets/architecture-transition.svg", "alt": "Transition architecture from the synthetic enterprise integration migration case"}]
+    },
+    {
       "title": "IT Solution Selection Framework",
       "url": "https://github.com/NesmachnyDN/it-solution-selection-framework",
       "category": "Enterprise & Solution Architecture",
