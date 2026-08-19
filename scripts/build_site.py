@@ -18,7 +18,7 @@ SITE_URL = "https://nesmachnydn.github.io/"
 UI = {
     "en": {
         "lang": "en", "locale": "en_US", "skip": "Skip to content", "nav_selected": "Projects", "nav_all": "All projects", "nav_focus": "Expertise", "nav_contact": "Contact",
-        "portfolio": "Enterprise & Solution Architecture", "view": "View projects", "overview": "Profile", "cases": "public cases", "selected_works": "featured projects", "tracks": "architecture areas", "core": "Core expertise",
+        "portfolio": "Enterprise & Solution Architecture", "view": "View projects", "overview": "Profile", "cases": "portfolio cases", "selected_works": "featured cases", "tracks": "expertise areas", "core": "Core expertise",
         "selected": "Featured projects", "selected_title": "Selected architecture work", "selected_lead": "Enterprise architecture, solution architecture, integration, governance and AI-assisted engineering.",
         "all": "Portfolio", "all_title": "All public projects", "track": "Architecture area",
         "discipline": "Expertise", "focus_title": "Architecture focus",
@@ -26,7 +26,7 @@ UI = {
     },
     "ru": {
         "lang": "ru", "locale": "ru_RU", "skip": "Перейти к содержимому", "nav_selected": "Проекты", "nav_all": "Все проекты", "nav_focus": "Экспертиза", "nav_contact": "Контакты",
-        "portfolio": "Корпоративная архитектура и архитектура решений", "view": "Смотреть проекты", "overview": "Профиль", "cases": "публичных кейсов", "selected_works": "ключевых проектов", "tracks": "направлений архитектуры", "core": "Ключевая экспертиза",
+        "portfolio": "Корпоративная архитектура и архитектура решений", "view": "Смотреть проекты", "overview": "Профиль", "cases": "кейсов в портфолио", "selected_works": "избранных кейсов", "tracks": "областей экспертизы", "core": "Ключевая экспертиза",
         "selected": "Ключевые проекты", "selected_title": "Избранные архитектурные кейсы", "selected_lead": "Корпоративная архитектура, архитектура решений, интеграция, архитектурное управление и разработка с применением ИИ.",
         "all": "Портфолио", "all_title": "Все публичные проекты", "track": "Направление",
         "discipline": "Экспертиза", "focus_title": "Профессиональный фокус",
