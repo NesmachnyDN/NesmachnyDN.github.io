@@ -18,6 +18,7 @@
     "Enterprise Architecture",
     "Solution Architecture",
     "Enterprise Integration",
+    "Security Architecture",
     "Architecture Governance",
     "AI-Assisted Engineering",
     "Architecture Tooling"
@@ -26,6 +27,7 @@
     "Enterprise Architecture": "Capabilities, baseline and target states, transformation roadmaps and traceability to business drivers.",
     "Solution Architecture": "Service boundaries, quality attributes, deployment constraints and implementation-ready decisions.",
     "Enterprise Integration": "APIs, messaging, asynchronous flows, anti-corruption layers and explicit failure semantics.",
+    "Security Architecture": "IAM/IdM integration, RBAC boundaries, access lifecycle, segregation of duties and reconciliation.",
     "Architecture Governance": "ADRs, standards, review gates and architecture-to-delivery traceability.",
     "AI-Assisted Engineering": "Repository-governed context, bounded PRs, validation evidence and independent review.",
     "Architecture Tooling": "Automation that makes architecture repositories, standards and engineering workflows repeatable."
@@ -34,12 +36,13 @@
     "Enterprise Architecture": {"title": "Корпоративная архитектура", "detail": "Бизнес-возможности, текущее и целевое состояние, дорожные карты трансформации и трассировка до бизнес-драйверов."},
     "Solution Architecture": {"title": "Архитектура решений", "detail": "Границы сервисов, атрибуты качества, ограничения развёртывания и решения, готовые к передаче в реализацию."},
     "Enterprise Integration": {"title": "Корпоративная интеграция", "detail": "API, очереди и события, асинхронные взаимодействия, anti-corruption layer и явно определённая семантика отказов."},
+    "Security Architecture": {"title": "Архитектура безопасности", "detail": "IAM/IdM, RBAC, жизненный цикл доступа, разделение полномочий и сверка фактически назначенных прав."},
     "Architecture Governance": {"title": "Архитектурное управление", "detail": "ADR, стандарты, архитектурные проверки и сквозная трассировка решений до реализации."},
     "AI-Assisted Engineering": {"title": "Разработка с применением ИИ", "detail": "Управляемый контекст репозитория, bounded PR, доказательства проверок и независимый review результатов ИИ-агентов."},
     "Architecture Tooling": {"title": "Архитектурные инструменты", "detail": "Автоматизация архитектурных репозиториев, стандартов и инженерных процессов для воспроизводимой работы команд."}
   },
-  "core": ["TOGAF", "ArchiMate", "Capability-Based Planning", "Integration Architecture", "DDD", "Java", "Spring Boot", "Architecture Automation"],
-  "core_ru": ["TOGAF", "ArchiMate", "Планирование на основе бизнес-возможностей", "Интеграционная архитектура", "DDD", "Java", "Spring Boot", "Автоматизация архитектуры"],
+  "core": ["TOGAF", "ArchiMate", "Capability-Based Planning", "Integration Architecture", "Security Architecture", "IAM / IdM", "RBAC", "DDD", "Java", "Spring Boot", "Architecture Automation"],
+  "core_ru": ["TOGAF", "ArchiMate", "Планирование на основе бизнес-возможностей", "Интеграционная архитектура", "Архитектура безопасности", "IAM / IdM", "RBAC", "DDD", "Java", "Spring Boot", "Автоматизация архитектуры"],
   "projects": [
     {
       "title": "Cloud Development Platform Architecture",
@@ -78,6 +81,25 @@
         "tags": ["Архитектурное ревью", "Распределённые системы", "Контур управления", "Architecture Governance"],
         "cover_alt": "Обложка кейса архитектурного ревью распределённой платформы"
       }
+    },
+    {
+      "title": "Centralized IAM Integration for an Enterprise Platform",
+      "url": "https://github.com/NesmachnyDN/enterprise-platform-iam-integration-case",
+      "category": "Solution & Security Architecture",
+      "featured": true,
+      "order": 13,
+      "summary": "Centralized access-management architecture separating IAM control plane from application runtime, with directory-group RBAC, workflow provisioning, SoD, reconciliation and controlled failure behavior.",
+      "tags": ["IAM", "RBAC", "Security Architecture", "Access Governance"],
+      "cover": "./assets/covers/enterprise-platform-iam-integration-case.svg",
+      "cover_alt": "Centralized IAM Integration portfolio cover",
+      "ru": {
+        "title": "Централизованное управление доступом к корпоративной платформе",
+        "category": "Архитектура решений и безопасность",
+        "summary": "Кейс централизованного управления доступом: разделение control plane и runtime, сопоставление групп каталога и RBAC-ролей, управляемая выдача/отзыв прав, SoD, сверка и локализация отказа IAM.",
+        "tags": ["IAM", "RBAC", "Архитектура безопасности", "Управление доступом"],
+        "cover_alt": "Обложка кейса централизованного управления доступом"
+      },
+      "evidence": [{"type": "architecture-diagram", "url": "https://raw.githubusercontent.com/NesmachnyDN/enterprise-platform-iam-integration-case/main/assets/control-runtime-architecture.svg", "alt": "Control plane and runtime plane architecture from the synthetic IAM case"}]
     },
     {
       "title": "Enterprise Integration Modernization",
