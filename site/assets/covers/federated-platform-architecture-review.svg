@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Federated Platform Architecture Review</title>
+  <desc id="desc">Architecture review portfolio cover showing control plane and distributed nodes</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071a3a"/>
+      <stop offset="1" stop-color="#0b4e91"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" rx="34" fill="url(#bg)"/>
+  <g fill="none" stroke="#8ec5ff" stroke-width="3" opacity=".28">
+    <rect x="790" y="118" width="350" height="92" rx="22"/>
+    <rect x="748" y="348" width="145" height="92" rx="22"/>
+    <rect x="930" y="348" width="145" height="92" rx="22"/>
+    <rect x="1112" y="348" width="110" height="92" rx="22"/>
+    <path d="M965 210v72M965 282H820v66M965 282v66M965 282h202v66"/>
+    <path d="M820 440v74M1002 440v74M1167 440v74"/>
+    <path d="M764 514h458"/>
+  </g>
+  <g font-family="Arial,Helvetica,sans-serif" fill="#fff">
+    <text x="72" y="112" font-size="28" font-weight="700" letter-spacing="3">ENTERPRISE · SOLUTION ARCHITECTURE</text>
+    <text x="72" y="216" font-size="66" font-weight="700">Federated Platform</text>
+    <text x="72" y="292" font-size="66" font-weight="700">Architecture Review</text>
+    <text x="72" y="368" font-size="30" opacity=".9">Control plane · lifecycle · autonomy · resilience</text>
+  </g>
+  <g font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700">
+    <rect x="850" y="138" width="230" height="52" rx="26" fill="#9bd6ff"/>
+    <text x="889" y="171" fill="#071a3a">CONTROL PLANE</text>
+    <rect x="758" y="368" width="125" height="52" rx="26" fill="#e8f6ff"/>
+    <text x="782" y="401" fill="#071a3a">CENTRAL</text>
+    <rect x="940" y="368" width="125" height="52" rx="26" fill="#e8f6ff"/>
+    <text x="956" y="401" fill="#071a3a">REGIONAL</text>
+    <rect x="1120" y="368" width="94" height="52" rx="26" fill="#e8f6ff"/>
+    <text x="1132" y="401" fill="#071a3a">ISOLATED</text>
+  </g>
+  <g font-family="Arial,Helvetica,sans-serif" font-size="25" fill="#d5ebff">
+    <text x="72" y="615">Architecture review</text>
+    <text x="318" y="615">Node profiles</text>
+    <text x="515" y="615">Version governance</text>
+    <text x="785" y="615">Reconciliation</text>
+    <text x="1000" y="615">Failure containment</text>
+  </g>
+</svg>
