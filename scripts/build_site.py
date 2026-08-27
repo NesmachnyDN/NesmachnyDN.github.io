@@ -20,7 +20,7 @@ UI = {
         "lang": "en", "locale": "en_US", "skip": "Skip to content", "nav_selected": "Projects", "nav_all": "All projects", "nav_focus": "Expertise", "nav_contact": "Contact",
         "portfolio": "Enterprise & Solution Architecture", "view": "View projects", "overview": "Profile", "cases": "portfolio cases", "selected_works": "featured cases", "tracks": "expertise areas", "core": "Core expertise",
         "selected": "Featured projects", "selected_title": "Selected architecture work", "selected_lead": "Enterprise architecture, solution architecture, integration, governance and AI-assisted engineering.",
-        "all": "Portfolio", "all_title": "All public projects", "track": "Architecture area",
+        "all": "Portfolio", "all_title": "All portfolio cases", "track": "Architecture area",
         "discipline": "Expertise", "focus_title": "Architecture focus",
         "contact": "Contact", "links": "Professional profiles", "explore": "View project", "badge": "Featured", "footer": "Enterprise & Solution Architecture · Integration · Architecture Governance", "aria_nav": "Primary navigation", "aria_top": "Back to top", "aria_overview": "Profile overview", "aria_open": "Open"
     },
@@ -28,7 +28,7 @@ UI = {
         "lang": "ru", "locale": "ru_RU", "skip": "Перейти к содержимому", "nav_selected": "Проекты", "nav_all": "Все проекты", "nav_focus": "Экспертиза", "nav_contact": "Контакты",
         "portfolio": "Корпоративная архитектура и архитектура решений", "view": "Смотреть проекты", "overview": "Профиль", "cases": "кейсов в портфолио", "selected_works": "избранных кейсов", "tracks": "областей экспертизы", "core": "Ключевая экспертиза",
         "selected": "Ключевые проекты", "selected_title": "Избранные архитектурные кейсы", "selected_lead": "Корпоративная архитектура, архитектура решений, интеграция, архитектурное управление и разработка с применением ИИ.",
-        "all": "Портфолио", "all_title": "Все публичные проекты", "track": "Направление",
+        "all": "Портфолио", "all_title": "Все кейсы портфолио", "track": "Направление",
         "discipline": "Экспертиза", "focus_title": "Профессиональный фокус",
         "contact": "Контакты", "links": "Профессиональные профили", "explore": "Открыть проект", "badge": "Ключевой проект", "footer": "Корпоративная архитектура · Архитектура решений · Интеграция · Architecture Governance", "aria_nav": "Основная навигация", "aria_top": "Наверх", "aria_overview": "Профиль", "aria_open": "Открыть"
     }
@@ -155,8 +155,9 @@ def render_proof(project: dict, locale: str) -> str:
     proof = project["proof"]
     access = PROOF_ACCESS[locale][proof["access"]]
     origin = PROOF_ORIGIN[locale][proof["origin"]]
+    aria_label = "Доказательность и происхождение" if locale == "ru" else "Evidence and provenance"
     return (
-        '<div class="proof-badges" aria-label="Evidence and provenance">'
+        f'<div class="proof-badges" aria-label="{aria_label}">'
         f'<span class="proof-badge access">{esc(access)}</span>'
         f'<span class="proof-badge origin">{esc(origin)}</span>'
         '</div>'
