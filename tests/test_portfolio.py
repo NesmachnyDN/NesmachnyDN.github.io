@@ -78,7 +78,7 @@ class PortfolioTests(unittest.TestCase):
         for locale in ("ru", "en"):
             rendered = build_site.build_html(self.data, locale)
             featured = [p for p in self.data["projects"] if p["featured"]]
-            self.assertEqual(rendered.count('class="project-cover"'), len(featured))
+            self.assertEqual(rendered.count('class="project-cover'), len(featured))
             for item in [e for p in self.data["projects"] for e in p.get("evidence", [])]:
                 self.assertNotIn(item["url"], rendered)
 
