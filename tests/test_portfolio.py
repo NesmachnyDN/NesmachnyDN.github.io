@@ -36,8 +36,35 @@ class PortfolioTests(unittest.TestCase):
         for project in self.data["projects"]:
             self.assertIn(project["title"], en)
             self.assertIn(project["ru"]["title"], ru)
-            self.assertIn(project["url"], ru)
-            self.assertIn(project["url"], en)
+            if project.get("url"):
+                self.assertIn(project["url"], ru)
+                self.assertIn(project["url"], en)
+
+    def test_evidence_and_provenance_are_rendered(self):
+        ru = build_site.build_html(self.data, "ru")
+        en = build_site.build_html(self.data, "en")
+        for project in self.data["projects"]:
+            proof = project["proof"]
+            self.assertIn(build_site.PROOF_ACCESS["ru"][proof["access"]], ru)
+            self.assertIn(build_site.PROOF_ORIGIN["ru"][proof["origin"]], ru)
+            self.assertIn(build_site.PROOF_ACCESS["en"][proof["access"]], en)
+            self.assertIn(build_site.PROOF_ORIGIN["en"][proof["origin"]], en)
+
+    def test_live_demo_case_may_omit_public_url(self):
+        case = next(p for p in self.data["projects"] if p["title"] == "Career Operations Automation Platform")
+        self.assertNotIn("url", case)
+        ru = build_site.build_html(self.data, "ru")
+        en = build_site.build_html(self.data, "en")
+        self.assertIn(case["ru"]["title"], ru)
+        self.assertIn(case["title"], en)
+        self.assertIn("Демонстрация вживую", ru)
+        self.assertIn("Live demo on request", en)
+
+    def test_proof_metadata_is_required(self):
+        mutated = json.loads(json.dumps(self.data))
+        mutated["projects"][0].pop("proof")
+        with self.assertRaises(ValueError):
+            build_site.validate(mutated)
 
     def test_metadata_is_language_specific(self):
         ru = build_site.build_html(self.data, "ru")
