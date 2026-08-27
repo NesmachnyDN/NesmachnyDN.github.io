@@ -33,6 +33,36 @@ UI = {
         "contact": "Контакты", "links": "Профессиональные профили", "explore": "Открыть проект", "badge": "Ключевой проект", "footer": "Корпоративная архитектура · Архитектура решений · Интеграция · Architecture Governance", "aria_nav": "Основная навигация", "aria_top": "Наверх", "aria_overview": "Профиль", "aria_open": "Открыть"
     }
 }
+PROOF_ACCESS = {
+    "en": {
+        "public-artifact": "Public artifact",
+        "runnable-public": "Runnable public implementation",
+        "live-demo-on-request": "Live demo on request",
+    },
+    "ru": {
+        "public-artifact": "Публичный артефакт",
+        "runnable-public": "Работающая публичная реализация",
+        "live-demo-on-request": "Демонстрация вживую",
+    },
+}
+
+PROOF_ORIGIN = {
+    "en": {
+        "sanitized-real-world": "Sanitized real-world case",
+        "practice-derived": "Practice-derived synthetic case",
+        "independent-portfolio": "Independent portfolio project",
+        "course-project": "Independent course project",
+        "personal-system": "Personal operational system",
+    },
+    "ru": {
+        "sanitized-real-world": "Анонимизированный реальный кейс",
+        "practice-derived": "Синтетический кейс на основе практики",
+        "independent-portfolio": "Самостоятельный проект для портфолио",
+        "course-project": "Самостоятельный учебный проект",
+        "personal-system": "Личная рабочая система",
+    },
+}
+
 
 
 def fail(message: str) -> None:
@@ -75,13 +105,17 @@ def validate(data: dict) -> None:
     orders: set[int] = set()
     leads = 0
     for index, project in enumerate(projects):
-        for field in ("title", "url", "category", "featured", "order", "summary", "tags", "ru"):
+        for field in ("title", "category", "featured", "order", "summary", "tags", "ru", "proof"):
             if field not in project:
                 fail(f"projects[{index}].{field} is required")
         if project["order"] in orders:
             fail("project order values must be unique")
         orders.add(project["order"])
-        validate_url(project["url"], f"projects[{index}].url")
+        if project.get("url"):
+            validate_url(project["url"], f"projects[{index}].url")
+        proof = project["proof"]
+        if not isinstance(proof, dict) or proof.get("access") not in PROOF_ACCESS["en"] or proof.get("origin") not in PROOF_ORIGIN["en"]:
+            fail(f"projects[{index}].proof must use supported access and origin values")
         for field in ("title", "category", "summary", "tags"):
             if not project["ru"].get(field):
                 fail(f"projects[{index}].ru.{field} is required")
@@ -117,25 +151,58 @@ def render_tags(tags: list[str]) -> str:
     return "".join(f'<span class="tag">{esc(tag)}</span>' for tag in tags)
 
 
-def render_card(project: dict, ui: dict, asset_prefix: str) -> str:
+def render_proof(project: dict, locale: str) -> str:
+    proof = project["proof"]
+    access = PROOF_ACCESS[locale][proof["access"]]
+    origin = PROOF_ORIGIN[locale][proof["origin"]]
+    return (
+        '<div class="proof-badges" aria-label="Evidence and provenance">'
+        f'<span class="proof-badge access">{esc(access)}</span>'
+        f'<span class="proof-badge origin">{esc(origin)}</span>'
+        '</div>'
+    )
+
+
+def render_card(project: dict, ui: dict, asset_prefix: str, locale: str) -> str:
     classes = ["project-card", "featured-card"]
     if project.get("lead"):
         classes.append("featured-lead")
     cover = project["cover"].replace("./", asset_prefix, 1)
+    url = project.get("url")
+    if url:
+        cover_html = (
+            f'<a class="project-cover" href="{esc(url)}" aria-label="{ui["aria_open"]} {esc(project["title"])}">'
+            f'<img src="{esc(cover)}" alt="{esc(project["cover_alt"])}" loading="lazy" decoding="async"></a>'
+        )
+        title_html = f'<a href="{esc(url)}">{esc(project["title"])}</a>'
+        action_html = f'<a class="project-link" href="{esc(url)}">{ui["explore"]} <span aria-hidden="true">↗</span></a>'
+    else:
+        cover_html = f'<div class="project-cover static-cover"><img src="{esc(cover)}" alt="{esc(project["cover_alt"])}" loading="lazy" decoding="async"></div>'
+        title_html = esc(project["title"])
+        action_html = ""
     return (
-        f'<article class="{" ".join(classes)}"><a class="project-cover" href="{esc(project["url"])}" aria-label="{ui["aria_open"]} {esc(project["title"])}">'
-        f'<img src="{esc(cover)}" alt="{esc(project["cover_alt"])}" loading="lazy" decoding="async"></a><div class="project-card-body">'
+        f'<article class="{" ".join(classes)}">{cover_html}<div class="project-card-body">'
         f'<div class="project-meta"><span>{esc(project["category"])}</span><span class="featured">{ui["badge"]}</span></div>'
-        f'<h3><a href="{esc(project["url"])}">{esc(project["title"])}</a></h3><p>{esc(project["summary"])}</p><div class="tags">{render_tags(project["tags"])}</div>'
-        f'<a class="project-link" href="{esc(project["url"])}">{ui["explore"]} <span aria-hidden="true">↗</span></a></div></article>'
+        f'<h3>{title_html}</h3><p>{esc(project["summary"])}</p>{render_proof(project, locale)}<div class="tags">{render_tags(project["tags"])}</div>'
+        f'{action_html}</div></article>'
     )
 
 
-def render_catalog(project: dict) -> str:
-    return f'<article class="catalog-item"><div><h3><a href="{esc(project["url"])}">{esc(project["title"])}</a></h3></div><p>{esc(project["summary"])}</p><a class="catalog-link" href="{esc(project["url"])}">GitHub ↗</a></article>'
+def render_catalog(project: dict, locale: str) -> str:
+    url = project.get("url")
+    if url:
+        title_html = f'<a href="{esc(url)}">{esc(project["title"])}</a>'
+        action_html = f'<a class="catalog-link" href="{esc(url)}">GitHub ↗</a>'
+    else:
+        title_html = esc(project["title"])
+        action_html = f'<span class="catalog-link catalog-demo">{esc(PROOF_ACCESS[locale][project["proof"]["access"]])}</span>'
+    return (
+        f'<article class="catalog-item"><div><h3>{title_html}</h3></div>'
+        f'<div class="catalog-summary"><p>{esc(project["summary"])}</p>{render_proof(project, locale)}</div>{action_html}</article>'
+    )
 
 
-def build_html(data: dict, locale: str = "ru") -> str:
+def build_html(def build_html(data: dict, locale: str = "ru") -> str:
     ui = UI[locale]
     profile = localized_profile(data, locale)
     projects = [localized_project(p, locale) for p in sorted(data["projects"], key=lambda p: p["order"])]
@@ -146,10 +213,10 @@ def build_html(data: dict, locale: str = "ru") -> str:
     alt_label = "EN" if locale == "ru" else "RU"
     categories = list(dict.fromkeys(p["category"] for p in projects))
     cat_nav = "".join(f'<a href="#category-{i}">{esc(c)}</a>' for i, c in enumerate(categories, 1))
-    cards = "\n".join(render_card(p, ui, asset_prefix) for p in featured)
+    cards = "\n".join(render_card(p, ui, asset_prefix, locale) for p in featured)
     sections = []
     for i, category in enumerate(categories, 1):
-        items = "\n".join(render_catalog(p) for p in projects if p["category"] == category)
+        items = "\n".join(render_catalog(p, locale) for p in projects if p["category"] == category)
         sections.append(f'<section class="portfolio-section" id="category-{i}"><div class="catalog-heading"><h2>{esc(category)}</h2></div><div class="catalog-list">{items}</div></section>')
     if locale == "ru":
         focus_items = "".join(f'<li><span class="focus-index">0{i}</span><strong class="focus-title">{esc(data["focus_ru"][key]["title"])}</strong><p class="focus-detail">{esc(data["focus_ru"][key]["detail"])}</p></li>' for i, key in enumerate(data["focus"], 1))
