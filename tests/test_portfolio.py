@@ -66,6 +66,18 @@ class PortfolioTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             build_site.validate(mutated)
 
+    def test_proof_badges_have_html_fallback_spacing(self):
+        ru = build_site.build_html(self.data, "ru")
+        self.assertIn('</span> <span class="proof-badge origin">', ru)
+
+    def test_stylesheets_are_cache_busted(self):
+        ru = build_site.build_html(self.data, "ru")
+        en = build_site.build_html(self.data, "en")
+        self.assertRegex(ru, r'href="\.\/style\.css\?v=[0-9a-f]{10}"')
+        self.assertRegex(ru, r'href="\.\/evidence\.css\?v=[0-9a-f]{10}"')
+        self.assertRegex(en, r'href="\.\.\/style\.css\?v=[0-9a-f]{10}"')
+        self.assertRegex(en, r'href="\.\.\/evidence\.css\?v=[0-9a-f]{10}"')
+
     def test_metadata_is_language_specific(self):
         ru = build_site.build_html(self.data, "ru")
         en = build_site.build_html(self.data, "en")
