@@ -202,7 +202,7 @@ def render_catalog(project: dict, locale: str) -> str:
     )
 
 
-def build_html(def build_html(data: dict, locale: str = "ru") -> str:
+def build_html(data: dict, locale: str = "ru") -> str:
     ui = UI[locale]
     profile = localized_profile(data, locale)
     projects = [localized_project(p, locale) for p in sorted(data["projects"], key=lambda p: p["order"])]
