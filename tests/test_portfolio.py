@@ -91,7 +91,7 @@ class PortfolioTests(unittest.TestCase):
     def test_homepage_is_content_first_not_site_explanation(self):
         ru = build_site.build_html(self.data, "ru")
         self.assertIn("Избранные архитектурные кейсы", ru)
-        self.assertIn("Все публичные проекты", ru)
+        self.assertIn("Все кейсы портфолио", ru)
         self.assertIn("Профессиональный фокус", ru)
         self.assertNotIn("этот раздел предназначен", ru)
         self.assertNotIn("не уменьшаются до нечитаемых превью", ru)
