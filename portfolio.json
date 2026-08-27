@@ -33,16 +33,61 @@
     "Architecture Tooling": "Automation that makes architecture repositories, standards and engineering workflows repeatable."
   },
   "focus_ru": {
-    "Enterprise Architecture": {"title": "Корпоративная архитектура", "detail": "Бизнес-возможности, текущее и целевое состояние, дорожные карты трансформации и трассировка до бизнес-драйверов."},
-    "Solution Architecture": {"title": "Архитектура решений", "detail": "Границы сервисов, атрибуты качества, ограничения развёртывания и решения, готовые к передаче в реализацию."},
-    "Enterprise Integration": {"title": "Корпоративная интеграция", "detail": "API, очереди и события, асинхронные взаимодействия, anti-corruption layer и явно определённая семантика отказов."},
-    "Security Architecture": {"title": "Архитектура безопасности", "detail": "IAM/IdM, RBAC, жизненный цикл доступа, разделение полномочий и сверка фактически назначенных прав."},
-    "Architecture Governance": {"title": "Архитектурное управление", "detail": "ADR, стандарты, архитектурные проверки и сквозная трассировка решений до реализации."},
-    "AI-Assisted Engineering": {"title": "Разработка с применением ИИ", "detail": "Управляемый контекст репозитория, bounded PR, доказательства проверок и независимый review результатов ИИ-агентов."},
-    "Architecture Tooling": {"title": "Архитектурные инструменты", "detail": "Автоматизация архитектурных репозиториев, стандартов и инженерных процессов для воспроизводимой работы команд."}
+    "Enterprise Architecture": {
+      "title": "Корпоративная архитектура",
+      "detail": "Бизнес-возможности, текущее и целевое состояние, дорожные карты трансформации и трассировка до бизнес-драйверов."
+    },
+    "Solution Architecture": {
+      "title": "Архитектура решений",
+      "detail": "Границы сервисов, атрибуты качества, ограничения развёртывания и решения, готовые к передаче в реализацию."
+    },
+    "Enterprise Integration": {
+      "title": "Корпоративная интеграция",
+      "detail": "API, очереди и события, асинхронные взаимодействия, anti-corruption layer и явно определённая семантика отказов."
+    },
+    "Security Architecture": {
+      "title": "Архитектура безопасности",
+      "detail": "IAM/IdM, RBAC, жизненный цикл доступа, разделение полномочий и сверка фактически назначенных прав."
+    },
+    "Architecture Governance": {
+      "title": "Архитектурное управление",
+      "detail": "ADR, стандарты, архитектурные проверки и сквозная трассировка решений до реализации."
+    },
+    "AI-Assisted Engineering": {
+      "title": "Разработка с применением ИИ",
+      "detail": "Управляемый контекст репозитория, bounded PR, доказательства проверок и независимый review результатов ИИ-агентов."
+    },
+    "Architecture Tooling": {
+      "title": "Архитектурные инструменты",
+      "detail": "Автоматизация архитектурных репозиториев, стандартов и инженерных процессов для воспроизводимой работы команд."
+    }
   },
-  "core": ["TOGAF", "ArchiMate", "Capability-Based Planning", "Integration Architecture", "Security Architecture", "IAM / IdM", "RBAC", "DDD", "Java", "Spring Boot", "Architecture Automation"],
-  "core_ru": ["TOGAF", "ArchiMate", "Планирование на основе бизнес-возможностей", "Интеграционная архитектура", "Архитектура безопасности", "IAM / IdM", "RBAC", "DDD", "Java", "Spring Boot", "Автоматизация архитектуры"],
+  "core": [
+    "TOGAF",
+    "ArchiMate",
+    "Capability-Based Planning",
+    "Integration Architecture",
+    "Security Architecture",
+    "IAM / IdM",
+    "RBAC",
+    "DDD",
+    "Java",
+    "Spring Boot",
+    "Architecture Automation"
+  ],
+  "core_ru": [
+    "TOGAF",
+    "ArchiMate",
+    "Планирование на основе бизнес-возможностей",
+    "Интеграционная архитектура",
+    "Архитектура безопасности",
+    "IAM / IdM",
+    "RBAC",
+    "DDD",
+    "Java",
+    "Spring Boot",
+    "Автоматизация архитектуры"
+  ],
   "projects": [
     {
       "title": "Cloud Development Platform Architecture",
@@ -52,17 +97,37 @@
       "lead": true,
       "order": 10,
       "summary": "End-to-end enterprise architecture transformation case developed with TOGAF 10 concepts and ArchiMate, covering baseline/target architecture, capability planning, GAP analysis and migration roadmap.",
-      "tags": ["TOGAF", "ArchiMate", "Transformation", "Roadmap"],
+      "tags": [
+        "TOGAF",
+        "ArchiMate",
+        "Transformation",
+        "Roadmap"
+      ],
       "cover": "./assets/covers/cloud-development-platform-architecture.svg",
       "cover_alt": "Cloud Development Platform Architecture portfolio cover",
       "ru": {
         "title": "Архитектура облачной платформы разработки",
         "category": "Корпоративная архитектура",
         "summary": "Сквозной кейс архитектурной трансформации с применением TOGAF 10 и ArchiMate: текущее и целевое состояние, бизнес-возможности, GAP-анализ и дорожная карта миграции.",
-        "tags": ["TOGAF", "ArchiMate", "Трансформация", "Roadmap"],
+        "tags": [
+          "TOGAF",
+          "ArchiMate",
+          "Трансформация",
+          "Roadmap"
+        ],
         "cover_alt": "Обложка кейса архитектуры облачной платформы разработки"
       },
-      "evidence": [{"type": "architecture-diagram", "url": "https://raw.githubusercontent.com/NesmachnyDN/cloud-development-platform-architecture/main/assets/readme/06-target-architecture-application.jpg", "alt": "Target application architecture view from the Cloud Development Platform Architecture case"}]
+      "evidence": [
+        {
+          "type": "architecture-diagram",
+          "url": "https://raw.githubusercontent.com/NesmachnyDN/cloud-development-platform-architecture/main/assets/readme/06-target-architecture-application.jpg",
+          "alt": "Target application architecture view from the Cloud Development Platform Architecture case"
+        }
+      ],
+      "proof": {
+        "access": "public-artifact",
+        "origin": "course-project"
+      }
     },
     {
       "title": "Federated Platform Architecture Review",
@@ -71,15 +136,29 @@
       "featured": true,
       "order": 12,
       "summary": "Architecture review case showing how a federated enterprise platform was strengthened by separating control and execution planes, defining node profiles, lifecycle/version governance, bounded autonomy, reconciliation and operational responsibility.",
-      "tags": ["Architecture Review", "Distributed Systems", "Control Plane", "Architecture Governance"],
+      "tags": [
+        "Architecture Review",
+        "Distributed Systems",
+        "Control Plane",
+        "Architecture Governance"
+      ],
       "cover": "./assets/covers/federated-platform-architecture-review.svg",
       "cover_alt": "Federated Platform Architecture Review portfolio cover",
       "ru": {
         "title": "Архитектурное ревью распределённой платформы",
         "category": "Корпоративная архитектура и архитектура решений",
         "summary": "Кейс архитектурного ревью: выделение контура управления из прикладной конфигурации, типовые профили узлов, управление жизненным циклом и версиями, автономность, синхронизация и эксплуатационная ответственность.",
-        "tags": ["Архитектурное ревью", "Распределённые системы", "Контур управления", "Architecture Governance"],
+        "tags": [
+          "Архитектурное ревью",
+          "Распределённые системы",
+          "Контур управления",
+          "Architecture Governance"
+        ],
         "cover_alt": "Обложка кейса архитектурного ревью распределённой платформы"
+      },
+      "proof": {
+        "access": "public-artifact",
+        "origin": "sanitized-real-world"
       }
     },
     {
@@ -89,17 +168,37 @@
       "featured": true,
       "order": 13,
       "summary": "Centralized access-management architecture separating IAM control plane from application runtime, with directory-group RBAC, workflow provisioning, SoD, reconciliation and controlled failure behavior.",
-      "tags": ["IAM", "RBAC", "Security Architecture", "Access Governance"],
+      "tags": [
+        "IAM",
+        "RBAC",
+        "Security Architecture",
+        "Access Governance"
+      ],
       "cover": "./assets/covers/enterprise-platform-iam-integration-case.svg",
       "cover_alt": "Centralized IAM Integration portfolio cover",
       "ru": {
         "title": "Централизованное управление доступом к корпоративной платформе",
         "category": "Архитектура решений и безопасность",
         "summary": "Кейс централизованного управления доступом: разделение control plane и runtime, сопоставление групп каталога и RBAC-ролей, управляемая выдача/отзыв прав, SoD, сверка и локализация отказа IAM.",
-        "tags": ["IAM", "RBAC", "Архитектура безопасности", "Управление доступом"],
+        "tags": [
+          "IAM",
+          "RBAC",
+          "Архитектура безопасности",
+          "Управление доступом"
+        ],
         "cover_alt": "Обложка кейса централизованного управления доступом"
       },
-      "evidence": [{"type": "architecture-diagram", "url": "https://raw.githubusercontent.com/NesmachnyDN/enterprise-platform-iam-integration-case/main/assets/control-runtime-architecture.svg", "alt": "Control plane and runtime plane architecture from the synthetic IAM case"}]
+      "evidence": [
+        {
+          "type": "architecture-diagram",
+          "url": "https://raw.githubusercontent.com/NesmachnyDN/enterprise-platform-iam-integration-case/main/assets/control-runtime-architecture.svg",
+          "alt": "Control plane and runtime plane architecture from the synthetic IAM case"
+        }
+      ],
+      "proof": {
+        "access": "public-artifact",
+        "origin": "sanitized-real-world"
+      }
     },
     {
       "title": "Enterprise Integration Modernization",
@@ -108,17 +207,37 @@
       "featured": true,
       "order": 14,
       "summary": "Enterprise integration modernization case covering legacy discovery, transition architecture, controlled coexistence, migration archetypes, readiness gates, wave planning and production rollback governance.",
-      "tags": ["Legacy Modernization", "Integration Architecture", "Transition Architecture", "Migration Governance"],
+      "tags": [
+        "Legacy Modernization",
+        "Integration Architecture",
+        "Transition Architecture",
+        "Migration Governance"
+      ],
       "cover": "./assets/covers/enterprise-integration-migration-case.svg",
       "cover_alt": "Enterprise Integration Modernization portfolio cover",
       "ru": {
         "title": "Модернизация корпоративной интеграции",
         "category": "Корпоративная архитектура и архитектура решений",
         "summary": "Кейс миграции унаследованного интеграционного ландшафта: AS-IS, переходная и целевая архитектура, controlled coexistence, типизация сценариев, критерии готовности, волны миграции и управляемый rollback.",
-        "tags": ["Legacy Modernization", "Интеграционная архитектура", "Переходная архитектура", "Migration Governance"],
+        "tags": [
+          "Legacy Modernization",
+          "Интеграционная архитектура",
+          "Переходная архитектура",
+          "Migration Governance"
+        ],
         "cover_alt": "Обложка кейса модернизации корпоративной интеграции"
       },
-      "evidence": [{"type": "architecture-diagram", "url": "https://raw.githubusercontent.com/NesmachnyDN/enterprise-integration-migration-case/main/assets/architecture-transition.svg", "alt": "Transition architecture from the synthetic enterprise integration migration case"}]
+      "evidence": [
+        {
+          "type": "architecture-diagram",
+          "url": "https://raw.githubusercontent.com/NesmachnyDN/enterprise-integration-migration-case/main/assets/architecture-transition.svg",
+          "alt": "Transition architecture from the synthetic enterprise integration migration case"
+        }
+      ],
+      "proof": {
+        "access": "public-artifact",
+        "origin": "sanitized-real-world"
+      }
     },
     {
       "title": "IT Solution Selection Framework",
@@ -127,17 +246,37 @@
       "featured": true,
       "order": 15,
       "summary": "Vendor-neutral architecture trade-study framework for selecting enterprise IT solutions through mandatory gates, evidence-backed weighted criteria, TCO, risk analysis and sensitivity checks.",
-      "tags": ["Decision Analysis", "Trade Study", "TCO", "Architecture Governance"],
+      "tags": [
+        "Decision Analysis",
+        "Trade Study",
+        "TCO",
+        "Architecture Governance"
+      ],
       "cover": "./assets/covers/it-solution-selection-framework.svg",
       "cover_alt": "IT Solution Selection Framework portfolio cover",
       "ru": {
         "title": "Методика выбора ИТ-решения",
         "category": "Корпоративная архитектура и архитектура решений",
         "summary": "Вендор-независимый архитектурный trade study: отсекающие требования, оценка shortlist по подтверждённым критериям, TCO, риски и анализ чувствительности.",
-        "tags": ["Выбор решений", "Trade Study", "TCO", "Architecture Governance"],
+        "tags": [
+          "Выбор решений",
+          "Trade Study",
+          "TCO",
+          "Architecture Governance"
+        ],
         "cover_alt": "Обложка кейса выбора ИТ-решения"
       },
-      "evidence": [{"type": "decision-analysis", "url": "https://raw.githubusercontent.com/NesmachnyDN/it-solution-selection-framework/main/assets/screenshots/01-decision-summary.png", "alt": "Decision summary from the synthetic IT solution selection case"}]
+      "evidence": [
+        {
+          "type": "decision-analysis",
+          "url": "https://raw.githubusercontent.com/NesmachnyDN/it-solution-selection-framework/main/assets/screenshots/01-decision-summary.png",
+          "alt": "Decision summary from the synthetic IT solution selection case"
+        }
+      ],
+      "proof": {
+        "access": "public-artifact",
+        "origin": "practice-derived"
+      }
     },
     {
       "title": "Portable Secure Exchange Client",
@@ -146,15 +285,29 @@
       "featured": true,
       "order": 20,
       "summary": "Cross-platform local client for controlled file exchange, demonstrating integration boundaries, integrity verification, detached-signature abstraction, audit and embedded persistence.",
-      "tags": ["Integration", "Security", "Cross-platform", "Persistence"],
+      "tags": [
+        "Integration",
+        "Security",
+        "Cross-platform",
+        "Persistence"
+      ],
       "cover": "./assets/covers/portable-secure-exchange-client.svg",
       "cover_alt": "Portable Secure Exchange Client portfolio cover",
       "ru": {
         "title": "Защищённый клиент обмена файлами",
         "category": "Архитектура решений и интеграция",
         "summary": "Кроссплатформенный локальный клиент для контролируемого обмена файлами: интеграционные границы, проверка целостности, абстракция отсоединённой подписи, аудит и встроенное хранение.",
-        "tags": ["Интеграция", "Безопасность", "Кроссплатформенность", "Хранение"],
+        "tags": [
+          "Интеграция",
+          "Безопасность",
+          "Кроссплатформенность",
+          "Хранение"
+        ],
         "cover_alt": "Обложка кейса защищённого клиента обмена файлами"
+      },
+      "proof": {
+        "access": "runnable-public",
+        "origin": "practice-derived"
       }
     },
     {
@@ -164,15 +317,29 @@
       "featured": true,
       "order": 30,
       "summary": "Offline-first integration bridge for systems available only from mutually exclusive network contexts, with canonical modeling, anti-corruption layers, reconciliation and idempotent publishing.",
-      "tags": ["Offline-first", "Integration", "ACL", "Reconciliation"],
+      "tags": [
+        "Offline-first",
+        "Integration",
+        "ACL",
+        "Reconciliation"
+      ],
       "cover": "./assets/covers/offline-worklog-bridge.svg",
       "cover_alt": "Offline Worklog Bridge portfolio cover",
       "ru": {
         "title": "Offline-интеграционный мост",
         "category": "Архитектура решений и интеграция",
         "summary": "Offline-first интеграционный мост для систем, доступных из взаимоисключающих сетевых контуров: каноническая модель, anti-corruption layer, сверка и идемпотентная публикация.",
-        "tags": ["Offline-first", "Интеграция", "ACL", "Сверка"],
+        "tags": [
+          "Offline-first",
+          "Интеграция",
+          "ACL",
+          "Сверка"
+        ],
         "cover_alt": "Обложка кейса offline-интеграционного моста"
+      },
+      "proof": {
+        "access": "runnable-public",
+        "origin": "practice-derived"
       }
     },
     {
@@ -182,15 +349,60 @@
       "featured": true,
       "order": 40,
       "summary": "Reusable architecture-governed workflow for software development with AI coding agents, explicit repository context, bounded PRs, versioned prompts and independent review gates.",
-      "tags": ["AI Engineering", "Governance", "Quality Gates", "Automation"],
+      "tags": [
+        "AI Engineering",
+        "Governance",
+        "Quality Gates",
+        "Automation"
+      ],
       "cover": "./assets/covers/ai-assisted-engineering-template.svg",
       "cover_alt": "AI-Assisted Engineering Template portfolio cover",
       "ru": {
         "title": "Шаблон разработки с ИИ-агентами",
         "category": "Архитектурные и инженерные инструменты",
         "summary": "Переиспользуемый архитектурно управляемый процесс разработки с ИИ-агентами: явный контекст репозитория, bounded PR, версионируемые промпты и независимые quality gates.",
-        "tags": ["ИИ-разработка", "Governance", "Quality Gates", "Автоматизация"],
+        "tags": [
+          "ИИ-разработка",
+          "Governance",
+          "Quality Gates",
+          "Автоматизация"
+        ],
         "cover_alt": "Обложка шаблона разработки с ИИ-агентами"
+      },
+      "proof": {
+        "access": "public-artifact",
+        "origin": "independent-portfolio"
+      }
+    },
+    {
+      "title": "Career Operations Automation Platform",
+      "category": "Architecture & Engineering Tooling",
+      "featured": true,
+      "order": 42,
+      "summary": "Personal operations platform on GitHub infrastructure combining scheduled and ad-hoc career/content discovery, AI-assisted evaluation, canonical opportunity state, append-only run history, deduplicated analytics and encrypted static publication with explicit human approval before external actions.",
+      "tags": [
+        "Workflow Automation",
+        "GitHub Actions",
+        "AI-assisted Evaluation",
+        "Human-in-the-loop"
+      ],
+      "cover": "./assets/covers/career-operations-automation-platform.svg",
+      "cover_alt": "Career Operations Automation Platform portfolio cover",
+      "ru": {
+        "title": "Платформа автоматизации карьерных операций",
+        "category": "Архитектурные и инженерные инструменты",
+        "summary": "Личная рабочая платформа на инфраструктуре GitHub: плановый и ручной поиск вакансий и профессионального контента, анализ с применением ИИ, каноническое состояние откликов, append-only история запусков, дедуплицированная аналитика и зашифрованная статическая публикация. Внешние действия выполняются только после решения человека.",
+        "tags": [
+          "Автоматизация процессов",
+          "GitHub Actions",
+          "Анализ с применением ИИ",
+          "Контроль человеком"
+        ],
+        "cover_alt": "Обложка кейса платформы автоматизации карьерных операций"
+      },
+      "proof": {
+        "access": "live-demo-on-request",
+        "origin": "personal-system"
       }
     },
     {
@@ -200,12 +412,26 @@
       "featured": false,
       "order": 50,
       "summary": "Vendor-neutral Java toolkit illustrating architecture-repository automation, glossary import, synthetic repository stubs and architecture reporting.",
-      "tags": ["Java", "Architecture Repository", "Automation", "Tooling"],
+      "tags": [
+        "Java",
+        "Architecture Repository",
+        "Automation",
+        "Tooling"
+      ],
       "ru": {
         "title": "Инструментарий автоматизации архитектурного репозитория",
         "category": "Архитектурные и инженерные инструменты",
         "summary": "Вендор-независимый Java toolkit для автоматизации архитектурного репозитория: импорт глоссария, синтетические заглушки репозитория и формирование архитектурной отчётности.",
-        "tags": ["Java", "Архитектурный репозиторий", "Автоматизация", "Tooling"]
+        "tags": [
+          "Java",
+          "Архитектурный репозиторий",
+          "Автоматизация",
+          "Tooling"
+        ]
+      },
+      "proof": {
+        "access": "runnable-public",
+        "origin": "practice-derived"
       }
     },
     {
@@ -215,12 +441,26 @@
       "featured": false,
       "order": 60,
       "summary": "Reproducible local infrastructure bootstrap for microservice development with PostgreSQL, Kafka and Apache Artemis while application services run and debug from the IDE.",
-      "tags": ["PostgreSQL", "Kafka", "Artemis", "Developer Experience"],
+      "tags": [
+        "PostgreSQL",
+        "Kafka",
+        "Artemis",
+        "Developer Experience"
+      ],
       "ru": {
         "title": "Локальный стек для микросервисной разработки",
         "category": "Архитектурные и инженерные инструменты",
         "summary": "Воспроизводимый локальный инфраструктурный контур для микросервисной разработки с PostgreSQL, Kafka и Apache Artemis при запуске и отладке прикладных сервисов из IDE.",
-        "tags": ["PostgreSQL", "Kafka", "Artemis", "Developer Experience"]
+        "tags": [
+          "PostgreSQL",
+          "Kafka",
+          "Artemis",
+          "Developer Experience"
+        ]
+      },
+      "proof": {
+        "access": "runnable-public",
+        "origin": "practice-derived"
       }
     }
   ]
