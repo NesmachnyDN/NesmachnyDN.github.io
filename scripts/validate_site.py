@@ -55,13 +55,15 @@ def validate_page(path: Path, expected_lang: str) -> tuple[int, int]:
 
 
 def main() -> None:
-    required = [SITE / "index.html", SITE / "en" / "index.html", SITE / "style.css", SITE / "evidence.css", SITE / ".nojekyll", SITE / "robots.txt", SITE / "sitemap.xml"]
+    required = [SITE / "index.html", SITE / "en" / "index.html", SITE / "style.css", SITE / "evidence.css", SITE / ".nojekyll", SITE / "robots.txt", SITE / "sitemap.xml", SITE / "oauth" / "avito" / "callback" / "index.html"]
     missing = [str(p.relative_to(SITE)) for p in required if not p.exists()]
     if missing: raise SystemExit(f"Missing generated files: {missing}")
     ru = validate_page(SITE / "index.html", "ru")
     en = validate_page(SITE / "en" / "index.html", "en")
     sitemap = (SITE / "sitemap.xml").read_text(encoding="utf-8")
-    if "https://nesmachnydn.github.io/en/" not in sitemap: raise SystemExit("sitemap is missing English page")
+    if "https://nesmachniy.ru/en/" not in sitemap: raise SystemExit("sitemap is missing English page")
+    callback = (SITE / "oauth" / "avito" / "callback" / "index.html").read_text(encoding="utf-8")
+    if "Avito API" not in callback or "noindex,nofollow" not in callback: raise SystemExit("Avito callback page is invalid")
     print(f"Validated RU {ru[0]} links/{ru[1]} anchors and EN {en[0]} links/{en[1]} anchors")
 
 if __name__ == "__main__": main()
