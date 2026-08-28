@@ -25,8 +25,8 @@ class PortfolioTests(unittest.TestCase):
         self.assertIn('<html lang="en">', en)
         self.assertIn(self.data["profile"]["ru"]["headline"], ru)
         self.assertIn(self.data["profile"]["headline"], en)
-        self.assertIn('href="https://nesmachnydn.github.io/en/"', ru)
-        self.assertIn('href="https://nesmachnydn.github.io/"', en)
+        self.assertIn('href="https://nesmachniy.ru/en/"', ru)
+        self.assertIn('href="https://nesmachniy.ru/"', en)
         self.assertIn('hreflang="ru"', ru)
         self.assertIn('hreflang="en"', en)
 
@@ -83,8 +83,8 @@ class PortfolioTests(unittest.TestCase):
         en = build_site.build_html(self.data, "en")
         self.assertIn('property="og:locale" content="ru_RU"', ru)
         self.assertIn('property="og:locale" content="en_US"', en)
-        self.assertIn('rel="canonical" href="https://nesmachnydn.github.io/"', ru)
-        self.assertIn('rel="canonical" href="https://nesmachnydn.github.io/en/"', en)
+        self.assertIn('rel="canonical" href="https://nesmachniy.ru/"', ru)
+        self.assertIn('rel="canonical" href="https://nesmachniy.ru/en/"', en)
 
     def test_selected_project_covers_are_not_evidence_thumbnails(self):
         for locale in ("ru", "en"):
