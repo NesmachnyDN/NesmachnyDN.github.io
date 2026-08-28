@@ -14,7 +14,7 @@ STYLE_FILE = ROOT / "site" / "style.css"
 EVIDENCE_STYLE_FILE = ROOT / "site" / "evidence.css"
 ASSET_DIR = ROOT / "site" / "assets"
 OUTPUT_DIR = ROOT / "_site"
-SITE_URL = "https://nesmachnydn.github.io/"
+SITE_URL = "https://nesmachniy.ru/"
 
 UI = {
     "en": {
@@ -242,6 +242,28 @@ def main() -> None:
     if OUTPUT_DIR.exists():
         shutil.rmtree(OUTPUT_DIR)
     (OUTPUT_DIR / "en").mkdir(parents=True)
+    callback_dir = OUTPUT_DIR / "oauth" / "avito" / "callback"
+    callback_dir.mkdir(parents=True)
+    (callback_dir / "index.html").write_text(
+        """<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Avito API — OAuth callback</title>
+</head>
+<body>
+  <main>
+    <h1>Avito API</h1>
+    <p>Техническая callback-страница персональной интеграции с Avito API.</p>
+    <p>Если вы были перенаправлены сюда после авторизации, это окно можно закрыть.</p>
+  </main>
+</body>
+</html>
+""",
+        encoding="utf-8",
+    )
     (OUTPUT_DIR / "index.html").write_text(build_html(data, "ru"), encoding="utf-8")
     (OUTPUT_DIR / "en" / "index.html").write_text(build_html(data, "en"), encoding="utf-8")
     shutil.copy2(STYLE_FILE, OUTPUT_DIR / "style.css")
