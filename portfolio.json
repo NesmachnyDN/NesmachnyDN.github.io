@@ -279,6 +279,38 @@
       }
     },
     {
+      "title": "Grounded AI Policy Assistant",
+      "url": "https://github.com/NesmachnyDN/cps-hackathon-summary",
+      "category": "Solution & Security Architecture",
+      "featured": true,
+      "order": 16,
+      "summary": "Time-boxed hackathon prototype for verifiable policy Q&A, combining deterministic evidence retrieval with a local privacy policy engine, reversible pseudonymization, protected external-LLM calls and document tone analysis.",
+      "tags": [
+        "Grounded AI",
+        "Privacy-by-Design",
+        "Pseudonymization",
+        "LLM Security"
+      ],
+      "cover": "./assets/covers/grounded-ai-policy-assistant.svg",
+      "cover_alt": "Grounded AI Policy Assistant portfolio cover",
+      "ru": {
+        "title": "Проверяемый AI-помощник по регламентам",
+        "category": "Архитектура решений и безопасность",
+        "summary": "Хакатонный прототип проверяемых ответов по регламентам: deterministic retrieval, локальный privacy policy engine, обратимая псевдонимизация, защищённые вызовы внешней LLM и карта тона документа.",
+        "tags": [
+          "Grounded AI",
+          "Privacy-by-Design",
+          "Псевдонимизация",
+          "Безопасность LLM"
+        ],
+        "cover_alt": "Обложка кейса проверяемого AI-помощника по регламентам"
+      },
+      "proof": {
+        "access": "runnable-public",
+        "origin": "hackathon-project"
+      }
+    },
+    {
       "title": "Portable Secure Exchange Client",
       "url": "https://github.com/NesmachnyDN/portable-secure-exchange-client",
       "category": "Solution Architecture & Integration",
@@ -379,7 +411,7 @@
       "category": "Architecture & Engineering Tooling",
       "featured": true,
       "order": 42,
-      "summary": "Personal operations platform on GitHub infrastructure combining scheduled and ad-hoc career/content discovery, AI-assisted evaluation, canonical opportunity state, append-only run history, deduplicated analytics and encrypted static publication with explicit human approval before external actions.",
+      "summary": "Personal operations platform on GitHub infrastructure combining scheduled and ad-hoc professional-content and portfolio workflows, AI-assisted evaluation, canonical state, append-only run history, deduplicated analytics and encrypted static publication with explicit human approval before external actions.",
       "tags": [
         "Workflow Automation",
         "GitHub Actions",
@@ -391,7 +423,7 @@
       "ru": {
         "title": "Платформа автоматизации карьерных операций",
         "category": "Архитектурные и инженерные инструменты",
-        "summary": "Личная рабочая платформа на инфраструктуре GitHub: плановый и ручной поиск вакансий и профессионального контента, анализ с применением ИИ, каноническое состояние откликов, append-only история запусков, дедуплицированная аналитика и зашифрованная статическая публикация. Внешние действия выполняются только после решения человека.",
+        "summary": "Личная рабочая платформа на инфраструктуре GitHub: плановые и ручные профессиональные и контентные workflows, анализ с применением ИИ, каноническое состояние, append-only история запусков, дедуплицированная аналитика и зашифрованная статическая публикация. Внешние действия выполняются только после решения человека.",
         "tags": [
           "Автоматизация процессов",
           "GitHub Actions",

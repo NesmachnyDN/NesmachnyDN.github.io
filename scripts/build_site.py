@@ -53,6 +53,7 @@ PROOF_ORIGIN = {
         "practice-derived": "Practice-derived synthetic case",
         "independent-portfolio": "Independent portfolio project",
         "course-project": "Independent course project",
+        "hackathon-project": "Time-boxed AI hackathon project",
         "personal-system": "Personal operational system",
     },
     "ru": {
@@ -60,6 +61,7 @@ PROOF_ORIGIN = {
         "practice-derived": "Синтетический кейс на основе практики",
         "independent-portfolio": "Самостоятельный проект для портфолио",
         "course-project": "Самостоятельный учебный проект",
+        "hackathon-project": "Проект AI-хакатона с ограничением по времени",
         "personal-system": "Личная рабочая система",
     },
 }

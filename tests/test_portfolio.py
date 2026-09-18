@@ -50,6 +50,18 @@ class PortfolioTests(unittest.TestCase):
             self.assertIn(build_site.PROOF_ACCESS["en"][proof["access"]], en)
             self.assertIn(build_site.PROOF_ORIGIN["en"][proof["origin"]], en)
 
+    def test_hackathon_case_is_public_and_localized(self):
+        case = next(p for p in self.data["projects"] if p["title"] == "Grounded AI Policy Assistant")
+        self.assertEqual(case["url"], "https://github.com/NesmachnyDN/cps-hackathon-summary")
+        self.assertEqual(case["proof"]["access"], "runnable-public")
+        self.assertEqual(case["proof"]["origin"], "hackathon-project")
+        ru = build_site.build_html(self.data, "ru")
+        en = build_site.build_html(self.data, "en")
+        self.assertIn("Проверяемый AI-помощник по регламентам", ru)
+        self.assertIn("Grounded AI Policy Assistant", en)
+        self.assertIn("Проект AI-хакатона с ограничением по времени", ru)
+        self.assertIn("Time-boxed AI hackathon project", en)
+
     def test_live_demo_case_may_omit_public_url(self):
         case = next(p for p in self.data["projects"] if p["title"] == "Career Operations Automation Platform")
         self.assertNotIn("url", case)
