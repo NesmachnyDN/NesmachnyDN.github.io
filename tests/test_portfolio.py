@@ -30,6 +30,17 @@ class PortfolioTests(unittest.TestCase):
         self.assertIn('hreflang="ru"', ru)
         self.assertIn('hreflang="en"', en)
 
+    def test_setka_profile_link_is_rendered(self):
+        ru = build_site.build_html(self.data, "ru")
+        en = build_site.build_html(self.data, "en")
+        setka = self.data["profile"]["setka"]
+        self.assertIn(f'href="{setka}"', ru)
+        self.assertIn(f'href="{setka}"', en)
+        self.assertIn('>Сетка ↗</a>', ru)
+        self.assertIn('>Setka ↗</a>', en)
+        self.assertIn(setka, ru)
+        self.assertIn(setka, en)
+
     def test_all_projects_are_localized(self):
         ru = build_site.build_html(self.data, "ru")
         en = build_site.build_html(self.data, "en")
