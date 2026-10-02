@@ -1,8 +1,8 @@
 {
   "profile": {
     "name": "Dmitry Nesmachny",
-    "headline": "Enterprise & Solution Architect",
-    "summary": "I design enterprise and solution architectures for complex corporate systems, with a focus on architecture transformation, integration, content and document platforms, secure exchange, architecture repositories, and engineering enablement.",
+    "headline": "Principal Solution Architect | Enterprise Integration | Applied AI for Architecture & Engineering",
+    "summary": "I design implementable enterprise and solution architectures for complex corporate systems, combining enterprise integration, architecture governance and engineering delivery. I apply generative AI and coding agents to information and requirements analysis, decision preparation, review, documentation and bounded engineering work, with explicit constraints, independent validation and human accountability for the result.",
     "location": "Remote",
     "email": "d.nesmachniy80@gmail.com",
     "github": "https://github.com/NesmachnyDN",
@@ -11,8 +11,8 @@
     "avatar": "https://avatars.githubusercontent.com/u/19331811?v=4",
     "ru": {
       "name": "Дмитрий Несмачный",
-      "headline": "Корпоративный архитектор / Архитектор решений",
-      "summary": "Проектирую корпоративную архитектуру и архитектуру решений для сложных корпоративных систем. Основной фокус — архитектурная трансформация, интеграция, платформы контента и электронных документов, защищённый обмен, архитектурные репозитории и инженерные практики."
+      "headline": "Корпоративный архитектор / Архитектор решений | Enterprise Integration | ИИ в архитектуре и разработке",
+      "summary": "Проектирую реализуемую корпоративную архитектуру и архитектуру решений для сложных корпоративных систем, сочетая корпоративную интеграцию, архитектурное управление и инженерную реализацию. Генеративный ИИ и AI-агентов применяю для анализа информации и требований, подготовки и проверки решений, документации и ограниченных инженерных изменений — с явными ограничениями задачи, независимой проверкой результата и сохранением ответственности человека."
     }
   },
   "focus": [
