@@ -408,6 +408,38 @@
       }
     },
     {
+      "title": "Obsidian Knowledge Search (OKS)",
+      "url": "https://github.com/NesmachnyDN/obsidian-knowledge-search",
+      "category": "Solution Architecture & Knowledge Retrieval",
+      "featured": true,
+      "order": 41,
+      "summary": "Pre-alpha local-first knowledge search for Obsidian: standalone-first architecture, experimental extraction and retrieval, traceable source evidence and reproducible benchmarks. No installable plugin yet.",
+      "tags": [
+        "Local-first",
+        "Knowledge Retrieval",
+        "Source Provenance",
+        "Architecture Governance"
+      ],
+      "cover": "./assets/covers/obsidian-knowledge-search.svg",
+      "cover_alt": "Obsidian Knowledge Search cover illustrating local document retrieval and traceable evidence",
+      "ru": {
+        "title": "Поиск знаний в Obsidian (OKS)",
+        "category": "Архитектура решений и поиск знаний",
+        "summary": "Публичный pre-alpha проект локального поиска знаний для Obsidian: архитектура автономного плагина, эксперименты с извлечением и поиском, проверяемая привязка к источникам и воспроизводимые тесты. Готового плагина пока нет.",
+        "tags": [
+          "Локальный поиск",
+          "Knowledge Retrieval",
+          "Происхождение данных",
+          "Architecture Governance"
+        ],
+        "cover_alt": "Обложка проекта Obsidian Knowledge Search с локальным поиском и проверяемыми источниками"
+      },
+      "proof": {
+        "access": "public-artifact",
+        "origin": "independent-portfolio"
+      }
+    },
+    {
       "title": "Career Operations Automation Platform",
       "category": "Architecture & Engineering Tooling",
       "featured": true,

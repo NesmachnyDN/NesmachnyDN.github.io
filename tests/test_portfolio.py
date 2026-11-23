@@ -73,6 +73,20 @@ class PortfolioTests(unittest.TestCase):
         self.assertIn("Проект AI-хакатона с ограничением по времени", ru)
         self.assertIn("Time-boxed AI hackathon project", en)
 
+    def test_obsidian_knowledge_search_is_featured_bilingual_and_pre_alpha(self):
+        case = next(p for p in self.data["projects"] if p["url"] == "https://github.com/NesmachnyDN/obsidian-knowledge-search")
+        self.assertEqual(case["order"], 41)
+        self.assertTrue(case["featured"])
+        self.assertEqual(case["proof"], {"access": "public-artifact", "origin": "independent-portfolio"})
+        self.assertIn("pre-alpha", case["summary"])
+        self.assertIn("pre-alpha", case["ru"]["summary"])
+        self.assertIn("No installable plugin yet", case["summary"])
+        self.assertIn("Готового плагина пока нет", case["ru"]["summary"])
+        for locale, title in (("en", case["title"]), ("ru", case["ru"]["title"])):
+            rendered = build_site.build_html(self.data, locale)
+            self.assertIn(title, rendered)
+            self.assertIn(case["url"], rendered)
+
     def test_live_demo_case_may_omit_public_url(self):
         case = next(p for p in self.data["projects"] if p["title"] == "Career Operations Automation Platform")
         self.assertNotIn("url", case)

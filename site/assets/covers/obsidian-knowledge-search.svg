@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title description">
+<title id="title">Obsidian Knowledge Search</title>
+<desc id="description">Local-first knowledge retrieval with traceable source evidence</desc>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#10192f"/><stop offset="1" stop-color="#173d57"/></linearGradient>
+<linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#254a69"/><stop offset="1" stop-color="#162b46"/></linearGradient>
+</defs>
+<rect width="1280" height="640" rx="36" fill="url(#bg)"/>
+<g opacity=".13" stroke="#a2f2eb" stroke-width="1"><path d="M56 440h1110M56 480h1110M56 520h1110M56 560h1110"/><path d="M760 60v520M800 60v520M840 60v520M880 60v520M920 60v520"/></g>
+<g font-family="Arial,Helvetica,sans-serif" fill="#f1f7ff">
+<text x="70" y="113" font-size="26" font-weight="700" letter-spacing="2.8" fill="#86dddb">LOCAL-FIRST KNOWLEDGE RETRIEVAL</text>
+<text x="70" y="224" font-size="66" font-weight="700">Obsidian</text>
+<text x="70" y="304" font-size="66" font-weight="700">Knowledge Search</text>
+<text x="70" y="377" font-size="29" fill="#d0e7f2">Source-grounded evidence · Offline-first design</text>
+<text x="70" y="557" font-size="24" fill="#a8c9db">Architecture</text>
+<text x="263" y="557" font-size="24" fill="#a8c9db">Retrieval</text>
+<text x="408" y="557" font-size="24" fill="#a8c9db">Provenance</text>
+</g>
+<g transform="translate(814 101)">
+<rect x="20" y="24" width="311" height="416" rx="21" fill="#071829" opacity=".5"/>
+<rect x="0" y="0" width="311" height="416" rx="21" fill="url(#panel)" stroke="#72a9c0" stroke-width="2"/>
+<path d="M38 72h171M38 102h211M38 132h177" stroke="#a6dce8" stroke-width="11" stroke-linecap="round" opacity=".7"/>
+<rect x="37" y="173" width="237" height="112" rx="12" fill="#17384b" stroke="#6bdbcf" stroke-width="2"/>
+<path d="M61 201h151M61 226h190M61 251h114" stroke="#a4e6de" stroke-width="8" stroke-linecap="round" opacity=".8"/>
+<path d="M52 326h203" stroke="#699eb2" stroke-width="7" stroke-linecap="round"/>
+<path d="M52 352h141" stroke="#699eb2" stroke-width="7" stroke-linecap="round"/>
+<circle cx="268" cy="324" r="12" fill="#65dfce"/>
+<path d="M243 321l13 13 24-28" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g fill="none" stroke="#c5fff6" stroke-width="9" stroke-linecap="round"><circle cx="1147" cy="446" r="65"/><path d="M1192 491l49 49"/></g>
+<circle cx="1147" cy="446" r="36" fill="#60d2cd" opacity=".17"/>
+</svg>
