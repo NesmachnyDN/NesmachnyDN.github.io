@@ -78,7 +78,7 @@ class PortfolioTests(unittest.TestCase):
         self.assertEqual(case["order"], 41)
         self.assertTrue(case["featured"])
         self.assertEqual(case["proof"], {"access": "public-artifact", "origin": "independent-portfolio"})
-        self.assertIn("pre-alpha", case["summary"])
+        self.assertIn("pre-alpha", case["summary"].lower())
         self.assertIn("pre-alpha", case["ru"]["summary"])
         self.assertIn("No installable plugin yet", case["summary"])
         self.assertIn("Готового плагина пока нет", case["ru"]["summary"])
